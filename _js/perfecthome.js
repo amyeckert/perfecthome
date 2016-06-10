@@ -1,7 +1,7 @@
 // http://www.marketleader.com/blog/2013/10/31/write-listing-descriptions-that-sell
 
-var myNoun;
-var myAdjective;
+var firstName;
+var favCity;
 var myVerb;
 var my Adverb;
 
