@@ -13,53 +13,127 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Find Your Perfect Home!</h1>
+		<h1>Help Us Find Your Perfect Home!</h1>
 
 		<div class="enter-name">
 			<form id="name">
 				<label for="firstName">First Name</label>
 				<input type="text" name="firstName" id="firstName" required aria-required="true" autofocus>
-				<button id="btn-click" type="submit" class="btn btn-primary btn-lg">Enter</button>		
+				<button id="btn-name" type="submit" class="btn btn-primary btn-lg">Enter</button>		
 			</form>
 		</div>
 
 		<!-- QESTIONS FOR LISTING 1 -->
 		<div id="questions1">
 			<form id="listing1" name="listing1" role="form">
-				<fieldset class="makeListing">
-					<legend></legend>
+
+				<fieldset class="makeListing form-group">
+					
+					<label for="adj1">Enter an adjective:</label>
+					<input id="adj1" class="form-control adjective-1" type="text" name="adj" placeholder="Adjective..." required aria-required="true">
+
+					<label for="favCounty">What is your favorite country?</label>
+					<input id="favCountry" class="form-control fav-country" type="text" name="favCity" placeholder="My favorite country is..." required aria-required="true">
+
+					<label for="bestie">What is the first name of your best friend?</label>
+					<input id="bestie" class="form-control best-friend" type="text" name="bestie" placeholder="My bestie..."  required aria-required="true">
+
+					<label for="adj2">Enter an adjective:</label>
+					<input id="adj2" class="form-control adjective-2" type="text" name="adj2" placeholder="Another adjective..." required aria-required="true">
+
+					<label for="noun1">Enter an noun:</label>
+					<input id="noun1" class="form-control noun-1" type="text" name="noun1" placeholder="A person, place, or thing..." required aria-required="true">
+
+					<label for="noun2">Enter another noun:</label>
+					<input id="noun2" class="form-control noun-2" type="text" name="noun2" placeholder="Another person, place, or thing..." required aria-required="true">
+					<label for="favCartoon">What is the name of your favorite cartoon character?</label>
+					<input id="favCartoon" class="form-control cartoon" type="text" name="favCartoon" placeholder="Tigger? Shrek? Peppa Pig?" required aria-required="true">
+					<label for="prez">Enter the last name of any U.S. President.</label>
+					<input id="prez" class="form-control president" type="text" name="prez" placeholder="Tigger? Shrek? Peppa Pig?" required aria-required="true">
+
+					<label for="gem">Enter the name of a precious gem or stone.</label>
+					<input id="gem" class="form-control gem-stone" type="text" name="gem" placeholder="Ruby? Istrian Marble? " required aria-required="true">
+
+					<label for="tree">What is your favorite tree?</label>
+					<input id="tree" class="form-control fav-tree" type="text" name="tree" placeholder="Mulberry? Dogwood? " required aria-required="true">
+
+					<label for="artist">Who is your favorite artist?</label>
+					<input id="artist" class="form-control fav-artist" type="text" name="artist" placeholder="Prince? Caravaggio? " required aria-required="true">
+
+					<label for="water">Name any body of water.</label>
+					<input id="water" class="form-control body-water" type="text" name="water" placeholder="Lake Como? Gowanus Canal? " required aria-required="true">
+
+					<label for="num1">enter a number from 0 - 100.</label>
+					<input id="num1" class="form-control number-1" type="text" name="num1" placeholder="#" required aria-required="true">
+
+					<label for="favAnimal">What is your favorite animal?</label>
+					<input id="favAnimal" class="form-control fav-animal" type="text" name="favAnimal" placeholder="Pig? Python? Pyrhana? " required aria-required="true">
+
+					<label for="verb1">Enter a verb.</label>
+					<input id="verb1" class="form-control verb-1" type="text" name="verb1" placeholder="An action, an occurrence, or a state of being..." required aria-required="true">
+
+					<button id="btn-generate" type="submit" class="btn btn-primary btn-lg">Call the movers!</button>
+
+					
+
+				</fieldset>
+			</form>
+		</div>
+		
+		<!-- QESTIONS FOR LISTING 2 -->
+		<!-- <div id="questions2">
+			<form id="listing2" name="listing2" role="form">
+
+				<fieldset class="makeListing form-group">
+					
+
+				
+
+					<input type="submit" name="formSubmit" value ="Start Packing!">
+				</fieldset>
+			</form>
+		</div> -->
+
+		<!-- QESTIONS FOR LISTING 3 -->
+		<!-- <div id="questions3">
+			<form id="listing3" name="listing3" role="form">
+
+				<fieldset class="makeListing form-group">
 
 					<label for="favCity">Where do you wish you lived?</label>
 					<input type="text" name="favCity" id="favCity" required aria-required="true">
 
 					<label for="favCity">Where do you wish you lived?</label>
 					<input type="text" name="favCity" id="favCity" required aria-required="true">
-
-					<!-- <label for="email">Email</label>
-					<input type="email" name="email" id="email" required aria-required="true"> -->
 
 					<input type="submit" name="formSubmit" value ="Start Packing!">
 				</fieldset>
 			</form>
 		</div>
-	
-
+ -->
 		<!-- LISTINGS -->
 		<div class="listings">
 
 			<div id="list1">
-			 	<p>You’ll love this adjective, a-story, cottage with spectacular panoramic views of favAnimal feature of landscape. This open plan b-bedroom, c -bathroom home will give you sqFt sq ft of generous space to verb around (without losing that adjective, cozy atmosphere when it’s time to cuddle up by the fireplace with a good noun). Wake up each morning to awe-inspiring sunrises in the direction and the adjective sounds of nature. Situated in a adjective community with an award-winning public institution on the outskirts of favCity, just thirty minutes from the magnificent natLandmark.</p>
+			 	<p>Inspired by the <span class="adjective-1"></span> chateaus of <span class="fav-country"></span>, Chateau <span class="best-friend"></span> is a(n) <span class="adjective-2"></span> and luxurious retreat that reflects that magical merging of <span class="noun-1"></span>  and <span class="noun-2"></span>. Created by renowned architect <span class="fav-cartoon"></span> and <span class="president"></span> Builders, the estate is a masterpiece of design and craftsmanship featuring inlaid <span class="gem-stone"></span>, hand-planed <span class="fav-tree"></span> flooring, intricately hand-painted ceilings, hand-carved fireplace by <span class="fav-artist"></span> , plus an elevator to transport from floor to floor.<br>Sprawling entertaining spaces flow outside to the stunning infinity pool and tranquil <span class="body-water"></span> beyond. Elegantly situated on <span class="number-1"></span> acres, Chateau <span class="best-friend"></span> is the crème de la crème in prestigious <span class="fav-animal"></span> <span class="verb-1"></span> Ranch.
+				</p>
+
+			 	<button id="btn-click" type="submit" class="btn btn-primary btn-lg">It's.... almost perfect, but let's search again. </button>
+
 			</div>
 
-			<div id="list2">
+			<!-- <div id="list2">
 			 	<p>You’ll love this adjective, a-story, cottage with spectacular panoramic views of favAnimal feature of landscape. This open plan b-bedroom, c -bathroom home will give you sqFt sq ft of generous space to verb around (without losing that adjective, cozy atmosphere when it’s time to cuddle up by the fireplace with a good noun). Wake up each morning to awe-inspiring sunrises in the direction and the adjective sounds of nature. Situated in a adjective community with an award-winning public institution on the outskirts of favCity, just thirty minutes from the magnificent natLandmark.</p>
+			 	<button id="btn-click" type="submit" class="btn btn-primary btn-lg">You know, it's almost perfect, but let's search again.</button>
 			</div>
 
 			<div id="list3">
 			 	<p>You’ll love this adjective, a-story, cottage with spectacular panoramic views of favAnimal feature of landscape. This open plan b-bedroom, c -bathroom home will give you sqFt sq ft of generous space to verb around (without losing that adjective, cozy atmosphere when it’s time to cuddle up by the fireplace with a good noun). Wake up each morning to awe-inspiring sunrises in the direction and the adjective sounds of nature. Situated in a adjective community with an award-winning public institution on the outskirts of favCity, just thirty minutes from the magnificent natLandmark.</p>
-			</div>
+			 	<button id="btn-click" type="submit" class="btn btn-primary btn-lg">You know, it's almost perfect, but let's search again.</button>
+			</div> -->
 		</div>
 	</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!--  JQuery UI -->
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>	

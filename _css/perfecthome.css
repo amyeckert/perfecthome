@@ -5,4 +5,6 @@
   max-width: 800px;
 }
 
-#list1, #list2, #list3 { display: none; }
+/*#list1,*/ 
+#list2, 
+#list3 { display: none; }
