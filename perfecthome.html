@@ -2,42 +2,72 @@
 <html lang="en"> 
 
 <head>
-	<title>Your Perfet Home</title>
+	
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/united/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+    <!-- <link href="css/main.css" rel="stylesheet" type="text/css" media="all"> -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="../css/perfecthome.css"/>
-
+	<link rel="stylesheet" type="text/css" href="_css/perfecthome.css"/>
+	<title>Find Your Your Perfet Home!</title>
 </head>
 <body>
-	<div class="wrapper">
+	<div class="container">
+		<h1>Find Your Perfect Home!</h1>
 
-		<form name="listing" action="sign up.php" method="post">
-			<fieldset class="makeListing">
-				<legend>Manufacture your perfect home listing!</legend>
-
+		<div class="enter-name">
+			<form id="name">
 				<label for="firstName">First Name</label>
 				<input type="text" name="firstName" id="firstName" required aria-required="true" autofocus>
-				
-				<label for="favCity">Where do you wish you lived?</label>
-				<input type="text" name="favCity" id="favCity" required aria-required="true">
+				<button id="btn-click" type="submit" class="btn btn-primary btn-lg">Enter</button>		
+			</form>
+		</div>
 
-				<label for="favCity">Where do you wish you lived?</label>
-				<input type="text" name="favCity" id="favCity" required aria-required="true">
+		<!-- QESTIONS FOR LISTING 1 -->
+		<div id="questions1">
+			<form id="listing1" name="listing1" role="form">
+				<fieldset class="makeListing">
+					<legend></legend>
 
-				<!-- <label for="email">Email</label>
-				<input type="email" name="email" id="email" required aria-required="true"> -->
+					<label for="favCity">Where do you wish you lived?</label>
+					<input type="text" name="favCity" id="favCity" required aria-required="true">
 
-				<!-- <input type="submit" name="formSubmit" value ="send"> -->
-			</fieldset>
-		</form>
+					<label for="favCity">Where do you wish you lived?</label>
+					<input type="text" name="favCity" id="favCity" required aria-required="true">
+
+					<!-- <label for="email">Email</label>
+					<input type="email" name="email" id="email" required aria-required="true"> -->
+
+					<input type="submit" name="formSubmit" value ="Start Packing!">
+				</fieldset>
+			</form>
+		</div>
+	
+
+		<!-- LISTINGS -->
+		<div class="listings">
+
+			<div id="list1">
+			 	<p>You’ll love this adjective, a-story, cottage with spectacular panoramic views of favAnimal feature of landscape. This open plan b-bedroom, c -bathroom home will give you sqFt sq ft of generous space to verb around (without losing that adjective, cozy atmosphere when it’s time to cuddle up by the fireplace with a good noun). Wake up each morning to awe-inspiring sunrises in the direction and the adjective sounds of nature. Situated in a adjective community with an award-winning public institution on the outskirts of favCity, just thirty minutes from the magnificent natLandmark.</p>
+			</div>
+
+			<div id="list2">
+			 	<p>You’ll love this adjective, a-story, cottage with spectacular panoramic views of favAnimal feature of landscape. This open plan b-bedroom, c -bathroom home will give you sqFt sq ft of generous space to verb around (without losing that adjective, cozy atmosphere when it’s time to cuddle up by the fireplace with a good noun). Wake up each morning to awe-inspiring sunrises in the direction and the adjective sounds of nature. Situated in a adjective community with an award-winning public institution on the outskirts of favCity, just thirty minutes from the magnificent natLandmark.</p>
+			</div>
+
+			<div id="list3">
+			 	<p>You’ll love this adjective, a-story, cottage with spectacular panoramic views of favAnimal feature of landscape. This open plan b-bedroom, c -bathroom home will give you sqFt sq ft of generous space to verb around (without losing that adjective, cozy atmosphere when it’s time to cuddle up by the fireplace with a good noun). Wake up each morning to awe-inspiring sunrises in the direction and the adjective sounds of nature. Situated in a adjective community with an award-winning public institution on the outskirts of favCity, just thirty minutes from the magnificent natLandmark.</p>
+			</div>
+		</div>
 	</div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!--  JQuery UI -->
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>	
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<!-- CUSTOM JS -->
 <script src="_js/perfecthome.js"></script>
 
 </body>

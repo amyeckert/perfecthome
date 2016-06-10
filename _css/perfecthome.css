@@ -1,1 +1,8 @@
-/*css here */
+/*/* perfecthome.css */
+
+.container {
+  padding-top: 50px;
+  max-width: 800px;
+}
+
+#list1, #list2, #list3 { display: none; }
