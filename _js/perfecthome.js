@@ -6,52 +6,64 @@ $(document).ready(function(e) {
   	console.log("hello!")
 	});
 
-	$("#btn-name").click(function(e) {
-	 	e.preventDefault()
+	// hide the story from view
+	$(".listings").hide();
 
-	    // this is where it chooses which of 3 listings to work with. 
+	// ENTER NAME --------------------//
+	// $("#btn-name").click(function(e) {
+	//  	e.preventDefault()
 
-	});
+	//  	var input = $("input").val()
 
+ //    	console.log(input)
+ //    	$(".results").empty().append(input);
+	//     // this is where it chooses which of 3 listings to work with. 
+
+	// });
 
   	// ---- event handler ---- //
   	$("#btn-generate").click(function(e) {
     	e.preventDefault()
+    
+   		// grab the values from the input boxes, then append them to the DOM
+	    $(".adj1").empty().append($("input.adj1").val());
 
-    // grab the values from the input boxes, then append them to the DOM
-	    $(".adjective-1").empty().append($("input.adj1").val());
+	    $(".favCountry").empty().append($("input.favCountry").val());
 
-	    $(".favorite-city").empty().append($("input.favCity").val());
+	    $(".bestie").empty().append($("input.bestie").val());
 
-	    $(".best-friend").empty().append($("input.bestie").val());
-
-	    $(".adjective-2").empty().append($("input.adj2").val());
+	    $(".adj2").empty().append($("input.adj2").val());
 
 	    $(".noun1").empty().append($("input.noun1").val());
 
-	    $(".verb").empty().append($("input.verb").val());
+	    $(".noun2").empty().append($("input.noun2").val());
 
-	    $(".noun-1").empty().append($("input.noun1").val());
+	    $(".favCartoon").empty().append($("input.favCartoon").val());
 
-	    $(".noun-2").empty().append($("input.noun2").val());
+	    $(".prez").empty().append($("input.prez").val());
 
-	    $(".cartoon").empty().append($("input.favCartoon").val());
+	    $(".gem").empty().append($("input.gem").val());
 
-	    $(".president").empty().append($("input.prez").val());
+	    $(".tree").empty().append($("input.tree").val());
 
-	    $(".gem-stone").empty().append($("input.gem").val());
+	    $(".artist").empty().append($("input.artist").val());
 
-	    $(".fav-tree").empty().append($("input.noun1").val());
+	    $(".water").empty().append($("input.water").val());
 
-	    $(".fav-artist").empty().append($("input.artist").val());
+	    $(".num1").empty().append($("input.num1").val());
 
-	    $(".body-water").empty().append($("input.water").val());
+	    $(".favAnimal").empty().append($("input.favAnimal").val());
 
-	    $(".fav-animal").empty().append($("input.favAnimal").val());
+	    $(".verb1").empty().append($("input.verb1").val());
 
-	    $(".verb-1").empty().append($("input.verb1").val());
+	    // show the story
+    	$(".listings").show();
 
-	    
+	    // empty the form's values
+	    $(':input').val('');
+
+	    // hide the questions
+	    $("#questions1").hide();
 
 
   });

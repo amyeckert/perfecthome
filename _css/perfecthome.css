@@ -5,6 +5,22 @@
   max-width: 800px;
 }
 
-/*#list1,*/ 
+
+.listings {
+	display: block;
+
+} 
+ 
 #list2, 
 #list3 { display: none; }
+
+span.water,
+span.bestie,
+span.favCartoon,
+span.favCountry,
+span.favAnimal, 
+span.verb1, 
+span.artist,
+span.prez {
+	text-transform: capitalize;
+}
