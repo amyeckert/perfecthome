@@ -9,6 +9,8 @@ $(document).ready(function(e) {
 	// hide the story from view
 	$(".listings").hide();
 
+	$("btn-replay").hide();
+
 	// ENTER NAME --------------------//
 	// $("#btn-name").click(function(e) {
 	//  	e.preventDefault()
@@ -44,6 +46,8 @@ $(document).ready(function(e) {
 
 	    $(".gem").empty().append($("input.gem").val());
 
+	    $("basement").empty().append($("input.basement").val());
+
 	    $(".tree").empty().append($("input.tree").val());
 
 	    $(".artist").empty().append($("input.artist").val());
@@ -58,12 +62,13 @@ $(document).ready(function(e) {
 
 	    // show the story
     	$(".listings").show();
+    	$(".btn-replay").show();
 
 	    // empty the form's values
 	    $(':input').val('');
 
 	    // hide the questions
-	    $("#questions1").hide();
+	    $(".questions1").hide();
 
 
   });

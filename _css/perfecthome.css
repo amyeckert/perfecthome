@@ -1,10 +1,103 @@
 /*/* perfecthome.css */
 
-.container {
-  padding-top: 50px;
-  max-width: 800px;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700italic);
+
+body {
+	background-color: rgba(255,243,232,1);
+
 }
 
+h1 {
+	color: rgba(63,63,61,1);;
+}
+fieldset, 
+form, 
+label, 
+legend {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+button{ 
+	/*border-radius: 50%;*/
+}
+.container {
+  margin: 0 auto;
+  padding: 30px 30px;
+  max-width: 900px;
+  min-width: 280px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem; 
+  border: none;
+  background-color: #fff;
+  color: rgba(63,63,61,1);
+ 
+}
+.enter-name {
+	display: none;
+}
+
+fieldset {
+	display: flex;
+	flex-flow: row wrap;
+
+}
+
+input {
+	margin: 0 0 1.3rem 0;
+
+}
+input[type="text"] {
+	box-sizing:border-box;
+	display:block;
+	margin-bottom: 19px;
+	width:100%;
+	max-width:40rem;
+	padding:10px;
+	color:#878787;
+
+}
+input[type="text"]:focus {
+	background:#fff;
+	border-color: rgba(255,155,68,1);
+	box-shadow:none;
+	outline-color: rgba(255,155,68,1);
+ 	outline-style: solid;
+}
+
+button[type="submit"] {
+	width: 50%;
+	padding: 1rem;
+	border-radius: 0;
+	border-style: none;
+	background-color: rgba(255,155,68,1);
+	outline-color: rgba(255,155,68,1);
+	color: #fff;
+	text-transform: capitalize;
+	font-size: 1.4rem;
+	/*max-width: 20rem;*/
+
+}
+button[type="submit"]:hover {	
+	/*border-radius: 0;*/
+	padding: 1rem;
+	color: #fff;
+	box-shadow: none;
+	outline: 1px solid rgba(255,155,68,1);
+	color: #fff;
+	text-transform: capitalize;
+	font-size: 1.4rem;   
+}
+
+#btn-generate {
+	margin: 1rem 0 0 0;
+}
+#btn-replay {
+	display: none;
+}
 
 .listings {
 	display: block;

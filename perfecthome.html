@@ -5,8 +5,7 @@
 	
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/united/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
-    <!-- <link href="css/main.css" rel="stylesheet" type="text/css" media="all"> -->
+	<!-- <link href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/united/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"> -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="_css/perfecthome.css"/>
 	<title>Find Your Your Perfet Home!</title>
@@ -26,13 +25,13 @@
 		</div>
 
 		<!-- QESTIONS FOR LISTING 1 -->
-		<div id="questions1">
+		<div class="questions1">
 			<form id="listing1" name="listing1" role="form">
 
 				<fieldset class="makeListing form-group">
 					
 					<label for="adj1">Enter an adjective.</label>
-					<input id="adj1" class="form-control adj1" type="text" name="adj1" placeholder="Adjective..." required aria-required="true">
+					<input id="adj1" class="form-control adj1" type="text" name="adj1" placeholder="Adjective..." required aria-required="true" autofocus>
 
 					<label for="favCounty">What is your favorite country?</label>
 					<input id="favCountry" class="form-control favCountry" type="text" name="favCountry" placeholder="My favorite country is..." required aria-required="true">
@@ -80,8 +79,6 @@
 					<input id="verb1" class="form-control verb1" type="text" name="verb1" placeholder="An action, an occurrence, or a state of being..." required aria-required="true">
 
 					<button id="btn-generate" type="submit" class="btn btn-primary btn-lg">Call the movers!</button>
-
-					
 
 				</fieldset>
 			</form>
@@ -139,7 +136,7 @@
 			</div> -->
 		</div>
 
-		<button id="btn-click" type="submit" class="btn btn-primary btn-lg">It's.... almost perfect, but let's search again. </button>
+		<button id="btn-replay" type="submit" class="btn btn-primary btn-lg">So close...but what else do you have?</button>
 
 	</div>
 
@@ -149,7 +146,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<!-- <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> -->
 <!-- CUSTOM JS -->
 <script src="_js/perfecthome.js"></script>
 
