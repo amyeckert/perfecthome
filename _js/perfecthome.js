@@ -9,7 +9,7 @@ $(document).ready(function(e) {
 	// hide the story from view
 	$(".listings").hide();
 
-	$("btn-replay").hide();
+	$(".replay").hide();
 
 	// ENTER NAME --------------------//
 	// $("#btn-name").click(function(e) {
@@ -46,7 +46,7 @@ $(document).ready(function(e) {
 
 	    $(".gem").empty().append($("input.gem").val());
 
-	    $("basement").empty().append($("input.basement").val());
+	    $(".basement").empty().append($("input.basement").val());
 
 	    $(".tree").empty().append($("input.tree").val());
 
@@ -62,7 +62,8 @@ $(document).ready(function(e) {
 
 	    // show the story
     	$(".listings").show();
-    	$(".btn-replay").show();
+
+    	$(".replay").show();
 
 	    // empty the form's values
 	    $(':input').val('');
