@@ -1,77 +1,147 @@
 // source and inspiration: https://github.com/mjhea0/jquery-madlibs
 
 $(document).ready(function(e) {
+	
+	// HIDE QUESITONS, STORY, AND REPLAY BUTTON ----------------//
+	$(".enter-name").show();
 
-	$(function() {
-  	console.log("hello!")
-	});
-
-	// hide the story from view
-	$(".listings").hide();
+	$(".questions1").hide();
+	$(".questions2").hide();
+	$(".questions3").hide();
+	// $(".btn-next").show();
+	$(".list1").hide();
+	$(".list2").hide();
+	$(".list3").hide();
 
 	$(".replay").hide();
-
-	// ENTER NAME --------------------//
-	// $("#btn-name").click(function(e) {
-	//  	e.preventDefault()
-
-	//  	var input = $("input").val()
-
- //    	console.log(input)
- //    	$(".results").empty().append(input);
-	//     // this is where it chooses which of 3 listings to work with. 
-
-	// });
-
-  	// ---- event handler ---- //
-  	$("#btn-generate").click(function(e) {
-    	e.preventDefault()
-    
-   		// grab the values from the input boxes, then append them to the DOM
-	    $(".adj1").empty().append($("input.adj1").val());
-
-	    $(".favCountry").empty().append($("input.favCountry").val());
-
-	    $(".bestie").empty().append($("input.bestie").val());
-
-	    $(".adj2").empty().append($("input.adj2").val());
-
-	    $(".noun1").empty().append($("input.noun1").val());
-
-	    $(".noun2").empty().append($("input.noun2").val());
-
-	    $(".favCartoon").empty().append($("input.favCartoon").val());
-
-	    $(".prez").empty().append($("input.prez").val());
-
-	    $(".gem").empty().append($("input.gem").val());
-
-	    $(".basement").empty().append($("input.basement").val());
-
-	    $(".tree").empty().append($("input.tree").val());
-
-	    $(".artist").empty().append($("input.artist").val());
-
-	    $(".water").empty().append($("input.water").val());
-
-	    $(".num1").empty().append($("input.num1").val());
-
-	    $(".favAnimal").empty().append($("input.favAnimal").val());
-
-	    $(".verb1").empty().append($("input.verb1").val());
-
-	    // show the story
-    	$(".listings").show();
-
-    	$(".replay").show();
-
-	    // empty the form's values
-	    $(':input').val('');
-
-	    // hide the questions
-	    $(".questions1").hide();
+	
 
 
-  });
+	// RANDOMLY CHOOSE WHICH LISTING --------------------//
+
+	$("#btn-next").click(function(e) {
+	 	e.preventDefault()
+
+	 	$(".enter-name").hide();
+
+	 	var q1 = document.querySelector(".questions1");
+	 	var q2 = document.querySelector(".questions2");
+	 	var q3 = document.querySelector(".questions3");
+
+	 	// var recentChoice;
+	 	var listings = [q1, q2, q3];
+	 	var chosen = listings[Math.floor(Math.random() * listings.length)];
+
+	 	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
+
+		if (chosen = q1) {
+	 		$(".questions1").show(); 
+	 		$(".questions2").hide();
+			$(".questions3").hide();
+	 	}
+		 else if (chosen = q2) {
+	 		$(".questions2").show();
+	 		$(".questions1").hide();  
+	 		$(".questions3").hide();
+	 	}
+		else { 
+			$(".questions3").show();
+	 		$(".questions1").hide(); 
+	 		$(".questions2").hide();
+		};
+
+
+	 	 
+		console.log(chosen);
+	});
+
+
+//  look at this: http://stackoverflow.com/questions/17891173/javascript-how-to-efficiently-randomly-select-array-item-without-repeats
+
+	// controls for form questions
+	$(function(){
+
+	  	// ---- event handler ---- //
+	  	$("#btn-submit1").click(function(e) {
+	    	e.preventDefault()
+	    
+	   		// grab the values from the input boxes, then append them to the DOM
+		    $(".adj1").empty().append($("input.adj1").val());
+
+		    $(".favCountry").empty().append($("input.favCountry").val());
+
+		    $(".bestie").empty().append($("input.bestie").val());
+
+		    $(".adj2").empty().append($("input.adj2").val());
+
+		    $(".noun1").empty().append($("input.noun1").val());
+
+		    $(".noun2").empty().append($("input.noun2").val());
+
+		    $(".favCartoon").empty().append($("input.favCartoon").val());
+
+		    $(".prez").empty().append($("input.prez").val());
+
+		    $(".gem").empty().append($("input.gem").val());
+
+		    $(".basement").empty().append($("input.basement").val());
+
+		    $(".tree").empty().append($("input.tree").val());
+
+		    $(".artist").empty().append($("input.artist").val());
+
+		    $(".water").empty().append($("input.water").val());
+
+		    $(".num1").empty().append($("input.num1").val());
+
+		    $(".favAnimal").empty().append($("input.favAnimal").val());
+
+		    $(".verb1").empty().append($("input.verb1").val());
+
+		    // show the story
+		    // $(".enter-name").hide();
+		    $(".listings").show();
+	    	$("#list1").show();
+	    	$("#btn-next").hide();
+	    	$(".replay").show();
+	    	$("#list2").hide();
+			$("#list3").hide();
+
+		    // hide the questions
+		    $(".questions1").hide();
+
+		    //change the h1 message
+		   var message = document.querySelector(".message").innerHTML = "How about this little gem?";
+		  
+
+	  	});
+
+
+	});
+
+	$("#btn-replay").click(function(e) {
+		console.log("working");
+		$(".enter-name").show();
+		$(".list1").hide();
+		$(".list2").hide();
+		$(".list3").hide();
+		
+		var message = document.querySelector(".message").innerHTML = "Help us find your perfect home!";
+		 //clear inputs
+		 // $(":input").val(" ");
+		 
+
+		 
+
+
+
+
+
+
+
+
+
+
+	});
 
 });
