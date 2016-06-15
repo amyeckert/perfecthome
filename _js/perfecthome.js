@@ -54,6 +54,7 @@ $(document).ready(function(e) {
 		// };
  
 		// console.log(chosen);
+
 	});
 
 
@@ -98,8 +99,6 @@ $(document).ready(function(e) {
 
 		    $(".num1").empty().append($("input.num1").val());
 
-		    // check that it is a number, and if so between 0-100;
-
 		    $(".favAnimal").empty().append($("input.favAnimal").val());
 
 		    $(".verb1").empty().append($("input.verb1").val());
@@ -121,7 +120,18 @@ $(document).ready(function(e) {
 
 		    console.log("working");
 		    //change the h1 message
-		   var message = document.querySelector(".message").innerHTML = "How about this little gem?";
+		   	var message = document.querySelector(".message").innerHTML = "How about this little gem?";
+
+		   //	VALIDATION   //
+		 //   function validateForm() {
+   //  			var x = document.forms["myForm"]["name"].value;
+   //  			if (x == null || x == "") {
+			//         alert("This field is required.");
+			//         return false;
+			//     }
+			// }
+
+			// validateForm();
 	  	});
 	});
 
@@ -141,7 +151,7 @@ $(document).ready(function(e) {
 		
 		var message = document.querySelector(".message").innerHTML = "Help us find your perfect home!";
 		 //clear inputs
-		 $(":input").val(" ");
+		 // $(":input").val(" ");
 		 
 
 		 
