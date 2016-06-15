@@ -8,12 +8,12 @@ $(document).ready(function(e) {
 	$(".questions1").hide();
 	$(".questions2").hide();
 	$(".questions3").hide();
-	// $(".btn-next").show();
-	$(".list1").hide();
-	$(".list2").hide();
-	$(".list3").hide();
-
+	$(".listings").hide();
+	$("#list1").hide();
+	$("#list2").hide();
+	$("#list3").hide();
 	$(".replay").hide();
+	$("#btn-reset").hide();
 	
 
 
@@ -22,43 +22,44 @@ $(document).ready(function(e) {
 	$("#btn-next").click(function(e) {
 	 	e.preventDefault()
 
-	 	$(".enter-name").hide();
-
-	 	var q1 = document.querySelector(".questions1");
+		var q1 = document.querySelector(".questions1");
 	 	var q2 = document.querySelector(".questions2");
 	 	var q3 = document.querySelector(".questions3");
 
+	 	$(".enter-name").hide();
+	 	$(".firstName").empty().append($("input.firstName").val());
+	 	$(".questions1").show(); 
+
 	 	// var recentChoice;
-	 	var listings = [q1, q2, q3];
-	 	var chosen = listings[Math.floor(Math.random() * listings.length)];
+	 	// var listings = [q1, q2, q3];
+
+	 	// var chosen = listings[Math.floor(Math.random() * listings.length)];
 
 	 	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
 
-		if (chosen = q1) {
-	 		$(".questions1").show(); 
-	 		$(".questions2").hide();
-			$(".questions3").hide();
-	 	}
-		 else if (chosen = q2) {
-	 		$(".questions2").show();
-	 		$(".questions1").hide();  
-	 		$(".questions3").hide();
-	 	}
-		else { 
-			$(".questions3").show();
-	 		$(".questions1").hide(); 
-	 		$(".questions2").hide();
-		};
-
-
-	 	 
-		console.log(chosen);
+		// if (chosen == q1) {
+	 // 		$(".questions1").show(); 
+	 // 		$(".questions2").hide();
+		// 	$(".questions3").hide();
+	 // 	}
+		//  else if (chosen == q2) {
+	 // 		$(".questions2").show();
+	 // 		$(".questions1").hide();  
+	 // 		$(".questions3").hide();
+	 // 	}
+		// else { 
+		// 	$(".questions3").show();
+	 // 		$(".questions1").hide(); 
+	 // 		$(".questions2").hide();
+		// };
+ 
+		// console.log(chosen);
 	});
 
 
 //  look at this: http://stackoverflow.com/questions/17891173/javascript-how-to-efficiently-randomly-select-array-item-without-repeats
 
-	// controls for form questions
+	// inputs for questionaires------------//
 	$(function(){
 
 	  	// ---- event handler ---- //
@@ -98,37 +99,44 @@ $(document).ready(function(e) {
 
 		    $(".verb1").empty().append($("input.verb1").val());
 
-		    // show the story
-		    // $(".enter-name").hide();
+		    //	show the story
 		    $(".listings").show();
 	    	$("#list1").show();
+
+	    	//	change button to replay button
 	    	$("#btn-next").hide();
 	    	$(".replay").show();
-	    	$("#list2").hide();
-			$("#list3").hide();
+
+	  		// $("#list2").hide();
+			// $("#list3").hide();
 
 		    // hide the questions
 		    $(".questions1").hide();
+			$("#btn-reset").show();
 
+		    console.log("working");
 		    //change the h1 message
 		   var message = document.querySelector(".message").innerHTML = "How about this little gem?";
-		  
-
 	  	});
-
-
 	});
 
-	$("#btn-replay").click(function(e) {
-		console.log("working");
+	// REPLAY BUTTON------------------------//
+	$("#btn-reset").click(function(e) {
+		console.log("click part is working");
+
 		$(".enter-name").show();
+		$(".btn-next").show();
+		$(".enter-name").show();
+
+		$("#btn-reset").hide();
+		$(".listings").hide();
 		$(".list1").hide();
 		$(".list2").hide();
 		$(".list3").hide();
 		
 		var message = document.querySelector(".message").innerHTML = "Help us find your perfect home!";
 		 //clear inputs
-		 // $(":input").val(" ");
+		 $(":input").val(" ");
 		 
 
 		 
