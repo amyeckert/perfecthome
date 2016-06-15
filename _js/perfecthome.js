@@ -74,6 +74,9 @@ $(document).ready(function(e) {
 		    $(".bestie").empty().append($("input.bestie").val());
 
 		    $(".adj2").empty().append($("input.adj2").val());
+		    
+		    //	if adj2 starts with a vowel, do this
+		    // else append "n "
 
 		    $(".noun1").empty().append($("input.noun1").val());
 
@@ -94,6 +97,8 @@ $(document).ready(function(e) {
 		    $(".water").empty().append($("input.water").val());
 
 		    $(".num1").empty().append($("input.num1").val());
+
+		    // check that it is a number, and if so between 0-100;
 
 		    $(".favAnimal").empty().append($("input.favAnimal").val());
 
@@ -125,7 +130,7 @@ $(document).ready(function(e) {
 		console.log("click part is working");
 
 		$(".enter-name").show();
-		$(".btn-next").show();
+		$("#btn-next").show();
 		$(".enter-name").show();
 
 		$("#btn-reset").hide();
