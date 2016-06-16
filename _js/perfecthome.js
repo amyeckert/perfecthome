@@ -4,6 +4,8 @@ $(document).ready(function(e) {
 	
 	// HIDE QUESITONS, STORY, AND REPLAY BUTTON ----------------//
 	$(".enter-name").show();
+	// $(".questions2").show();
+ // 	$(".questions3").show();
 
 	$(".questions1").hide();
 	$(".questions2").hide();
@@ -28,7 +30,9 @@ $(document).ready(function(e) {
 
 	 	$(".enter-name").hide();
 	 	$(".firstName").empty().append($("input.firstName").val());
-	 	$(".questions1").show(); 
+	 	// $(".questions1").show(); 
+	 	$(".questions2").show();
+ 		// $(".questions3").show();
 
 	 	// var recentChoice;
 	 	// var listings = [q1, q2, q3];
@@ -103,7 +107,7 @@ $(document).ready(function(e) {
 
 		    $(".verb1").empty().append($("input.verb1").val());
 
-		    //	show the story
+		    //	show the listing
 		    $(".listings").show();
 	    	$("#list1").show();
 
@@ -111,60 +115,81 @@ $(document).ready(function(e) {
 	    	$("#btn-next").hide();
 	    	$(".replay").show();
 
-	  		// $("#list2").hide();
-			// $("#list3").hide();
-
 		    // hide the questions
 		    $(".questions1").hide();
 			$("#btn-reset").show();
 
-		    console.log("working");
+		    console.log("questionaire 1 working");
 		    //change the h1 message
 		   	var message = document.querySelector(".message").innerHTML = "How about this little gem?";
 
 		   //	VALIDATION   //
-		 //   function validateForm() {
-   //  			var x = document.forms["myForm"]["name"].value;
-   //  			if (x == null || x == "") {
-			//         alert("This field is required.");
-			//         return false;
-			//     }
-			// }
-
-			// validateForm();
+		 
 	  	});
-	});
+
+	  	$("#btn-submit2").click(function(e) {
+	    	e.preventDefault()
+	    	console.log("listing 2 submit button works")
+
+			var dir = $("#direction option:selected" ).text();
+			var landmark = $("#landmark :selected").text();
+			console.log(dir, landmark);
+			 
+
+	    	$(".num5").empty().append($("input.num5").val());
+	 	    $(".adj3").empty().append($("input.adj3").val());
+	    	$(".num2").empty().append($("input.num2").val());
+	    	$(".num3").empty().append($("input.num3").val());
+	    	$(".num4").empty().append($("input.num4").val());
+	    	$(".emotion").empty().append($("input.emotion").val());
+	    	$(".direction").empty().append(dir);
+	    	$(".room").empty().append($("input.room").val());
+	    	$(".adj4").empty().append($("input.adj4").val());
+	    	$(".pubInst").empty().append($("input.pubInst").val());
+	    	$(".favCity").empty().append($("input.favCity").val());
+	    	$(".landmark").empty().append(landmark);
+
+	    	//	show the listing
+	    	$(".listings").show();
+	    	$("#list2").show();
+
+	    	//	change button to replay button
+	    	$("#btn-next").hide();
+	    	$(".replay").show();
+
+	    	// hide the questions
+	    	$(".questions2").hide();
+			$("#btn-reset").show();
+
+			console.log(" questionaire 2 working");
+		    //change the h1 message
+		   	var message = document.querySelector(".message").innerHTML = "This one says YOU all over it!";
+
+		});
+
+		// $("#btn-submit3").click(function(e) {
+	 //    	e.preventDefault()
+	 //    	console.log("listing 3 submit button works")
+
+	 		// var message = document.querySelector(".message").innerHTML = "Welcome home!";
+		// });
+
+
 
 	// REPLAY BUTTON------------------------//
 	$("#btn-reset").click(function(e) {
 		console.log("click part is working");
+		$("#btn-reset").hide();
+		$(".listings").hide();
 
 		$(".enter-name").show();
 		$("#btn-next").show();
-		$(".enter-name").show();
-
-		$("#btn-reset").hide();
-		$(".listings").hide();
-		$(".list1").hide();
-		$(".list2").hide();
-		$(".list3").hide();
 		
 		var message = document.querySelector(".message").innerHTML = "Help us find your perfect home!";
+
 		 //clear inputs
 		 // $(":input").val(" ");
-		 
-
-		 
-
-
-
-
-
-
-
-
-
-
+		});	 
 	});
 
 });

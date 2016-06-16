@@ -19,14 +19,13 @@
 			<form id="name">
 				<label for="firstName">Hi! What is your first name?</label>
 				<input type="text" class="firstName" name="firstName" id="firstName"  aria-required="true" required>
-				<input id="btn-next" type="submit" class="btn btn-primary btn-lg" value="Begin your journey!">	
+				<input id="btn-next" type="submit" class="btn btn-primary btn-lg" value="Let's go!">	
 			</form>
 		</div>
 
 		<!-- QESTIONS FOR LISTING 1 -->
 		<div class="questions1">
 
-			<!-- <p>Hello <span class="name"><span>,</p> -->
 			<form id="listing1" name="listing1" role="form">
 					
 				<label for="adj1">Enter an adjective.</label>
@@ -68,8 +67,8 @@
 				<label for="water">Name any body of water.</label>
 				<input id="water" class="form-control water" type="text" name="water" placeholder="Lake Como? Gowanus Canal? "  aria-required="true" required>
 
-				<label for="num1">Enter a number from 0 - 100.</label>
-				<input id="num1" class="form-control num1" type="number" name="num1" min="0" max="100" placeholder="#"  aria-required="true" required>
+				<label for="num1">Enter a number from 0 - 100.</label><br>
+				<input id="num1" class="form-control num1" type="number" name="num1" min="0" max="100" placeholder="#"  aria-required="true" required><br>
 
 				<label for="favAnimal">What is your favorite animal?</label>
 				<input id="favAnimal" class="form-control favAnimal" type="text" name="favAnimal" placeholder="Pig? Python? Pyrhana?"  aria-required="true" required>
@@ -81,13 +80,61 @@
 			</form>	
 		</div>
 	
-
 		<!-- QESTIONS FOR LISTING 2 -->
 		<div class="questions2">
+
 			<form id="questions2" name="questions2" role="form">
-				<label for="favCity">Are you nuts?</label>
-				<input type="text" name="favCity" id="favCity"  aria-required="true" required>
-				<input id="btn-submit1" type="submit" class="btn btn-primary btn-lg" value="Call the movers!">	
+
+				<label for="num5">Enter a number from 0 - 10.</label><br>
+				<input id="num5" class="form-control num5" type="number" name="num5" min="0" max="10" placeholder="#" aria-required="true" required><br>
+
+				<label for="adj3">Enter an adjective.</label>
+				<input id="adj3" class="form-control adj3" type="text" name="adj3" placeholder="Adjective..." aria-required="true" required autofocus>
+
+				<label for="num2">Enter another number from 0 - 10.</label><br>
+				<input id="num2" class="form-control num2" type="number" name="num2" min="0" max="10" placeholder="#" aria-required="true" required><br>
+
+				<label for="num3">Enter a number from 0 - 100.</label><br>
+				<input id="num3" class="form-control num3" type="number" name="num3" min="0" max="100" placeholder="#" aria-required="true" required><br>
+
+				<label for="num4">It's a numbers game! <br> Enter a number from 0 - 10.</label><br>
+				<input id="num4" class="form-control num4" type="number" name="num4" min="0" max="10" placeholder="#" aria-required="true" required><br>
+
+				<label for="emotion">Enter an emotion.</label>
+				<input id="emotion" class="form-control emotion" type="text" name="emotion" placeholder="Joy? Chagrin?" aria-required="true" required>
+
+				<label for="direction">Choose a direction.</label><br>
+				<select name="direction" form="questions2" id="direction">
+					<option value="N"> North </option>
+					<option value="S"> South </option> 
+					<option value="E"> East </option>
+					<option value="w"> West </option>
+				</select><br><br>
+
+				<label for="room">Name any room in a house.</label>
+				<input type="text" class="form-control room" name="room" id="room"  placeholder="Breakfast nook? Bathroom?" aria-required="true" required>
+
+				<label for="adj4">Enter an adjective.</label>
+				<input id="adj4" class="form-control adj4" type="text" name="adj4" placeholder="Adjective..." aria-required="true" required autofocus>
+
+				<label for="pubInst">Name a public institution.</label>
+				<input id="pubInst" class="form-control pubInst" type="text" name="pubInst" placeholder="Prison? Elementary School?" aria-required="true" required autofocus>
+
+				<label for="favCity">What's your favorite city?</label>
+				<input id="favCity" class="form-control favCity" type="text" name="favCity" placeholder="Fresno? Nairobi? Brasilia?..." aria-required="true" required autofocus>
+
+				<label for="landmark">Pick one!</label><br>
+				<select name="landmark" form="questions2" id="landmark">
+					<option value="niagara"> Niagara Falls </option>
+					<option value="reef"> Great Barrier Reef</option>
+					<option value="baikal"> Lake Baikal </option>
+					<option value="bkln"> Brooklyn Bridge </option>
+					<option value="nauru"> Island of Nauru </option>
+					<option value="canal"> Panama Canal </option>
+					<option value="amazon"> Amazon Rainforest </option>
+				</select><br><br>
+
+				<input id="btn-submit2" type="submit" class="btn btn-primary btn-lg" value="Get packing!">	
 			</form>			
 		</div>
 
@@ -96,7 +143,8 @@
 			<form id="questions3" name="questions3" role="form" data-parsley-validate>
 				<label for="favCity">What are you thinking?</label>
 				<input type="text" name="favCity" id="favCity"  aria-required="true" required>
-				<input id="btn-submit1" type="submit" value="Call the movers!">	
+
+				<input id="btn-submit1" type="submit" value="Get going on that title search!">	
 			</form>
 		</div>
 
@@ -111,7 +159,7 @@
 		 	</div>
 
 		 	<div id="list2">
-		 		<p>This one has welcome home <span class="firstName"></span> written all over it!
+		 		<p>Downsizing? Simplify your life, <span class="firstName"></span>, with this <span class="num5"></span>-story bungalow with <span class="adj3"></span> essentials. You’ll be thrilled with the newer carpet and windows! This efficient <span class="num2"></span>-bedroom, <span class="num3"></span>-bathroom home will reduce your carbon footprint with it’s <span class="num4"></span> sq ft of multi-purpose space. Live the dream, waking each morning to <span class="emotion"></span>-inspiring sunrises in the <span class="direction"></span>, work from home as the office doubles as a <span class="room"></span>. They say location is everyting, and you'll be right at home in the <span class="adj4"></span> community with an award-winning <span class="pubInst"></span> on the outskirts of <span class="favCity"></span>, just thirty minutes from the magnificent <span class="landmark"></span>.
 		 		</p>
 		 		<img src=" ">
 		 	</div>
