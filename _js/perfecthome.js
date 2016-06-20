@@ -103,7 +103,6 @@ $(document).ready(function(e) {
 		    $(".questions1").hide();
 			$("#btn-reset").show();
 
-		    console.log("questionaire 1 working");
 		    //change the h1 message
 		   	var message = document.querySelector(".message").innerHTML = "How about this little gem?";
 
