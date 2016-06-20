@@ -141,10 +141,53 @@
 		<!-- QESTIONS FOR LISTING 3 -->
 		<div class="questions3">
 			<form id="questions3" name="questions3" role="form" data-parsley-validate>
-				<label for="favCity">What are you thinking?</label>
-				<input type="text" name="favCity" id="favCity"  aria-required="true" required>
 
-				<input id="btn-submit1" type="submit" value="Get going on that title search!">	
+				<label for="num6">Enter a number from 0 - 5.</label><br>
+				<input id="num6" class="form-control num6" type="number" name="num6" min="0" max="5" placeholder="#" aria-required="true" required><br>
+
+				<label for="num7">Enter a number from 0 - 10.</label><br>
+				<input id="num7" class="form-control num7" type="number" name="num7" min="0" max="10" placeholder="#" aria-required="true" required><br>
+
+				<label for="disaster">What is your favorite natural disaster?</label>
+				<input type="text" class="form-control disaster" name="disaster" id="disaster"  placeholder="Plague? Tsunami?" aria-required="true" required>
+
+				<label for="clothing">Name an article of clothing.</label>
+				<input type="text" class="form-control clothing" name="clothing" id="clothing"  placeholder="Socks? Tie?" aria-required="true" required>	
+
+				<label for="mood">How would you describe your mood today?</label>
+				<input id="mood" class="form-control mood" type="text" name="mood" placeholder="Pensive? Disgusted?" aria-required="true" required autofocus>
+
+				<label for="adj6">Enter an adjective.</label>
+				<input id="adj6" class="form-control adj6" type="text" name="adj6" placeholder="Adjective..." aria-required="true" required autofocus>
+				
+				<label for="urban">Name a common feature of urban environments, plural.</label>
+				<input type="text" class="form-control urban" name="urban" id="urban"  placeholder="Sidewalks? Car alarms?" aria-required="true" required>
+
+				<label for="verb2">Enter a verb ending in -ing.</label>
+				<input type="text" class="form-control verb2" name="verb2" id="verb2"  placeholder="Chewing? Cogitating?" aria-required="true" required>
+
+				<label for="time">Pick one!</label><br>
+				<select name="time" form="questions3" id="time">
+					<option value="minute">Minute</option>
+					<option value="hour">Hour</option>
+					<option value="day">Day</option>
+					<option value="week">Week</option>
+					<option value="month">Month</option>
+				</select><br><br>
+
+				<label for="pluAnimals">What is your least favorite animal, plural.</label>
+				<input id="pluAnimals" type="text" class="form-control pluAnimals" name="pluAnimals" placeholder="Rabbits? Tigers?" aria-required="true" required>
+
+				<label for="room2">Name any room in a house.</label>
+				<input id="room2" type="text" class="form-control room2" name="room2" placeholder="Breakfast nook? Bathroom?" aria-required="true" required>
+
+				<label for="adj7">Enter an adjective.</label>
+				<input id="adj7" class="form-control adj7" type="text" name="adj7" placeholder="Adjective..." aria-required="true" required autofocus>
+
+				<label for="verb3">Enter a verb.</label>
+				<input type="text" class="form-control verb3" name="verb3" id="verb3"  placeholder="Argue? Relax?" aria-required="true" required>
+
+				<input id="btn-submit3" type="submit" value="Call the bank!">	
 			</form>
 		</div>
 
@@ -165,14 +208,15 @@
 		 	</div>
 
 		 	<div id="list3">
-				<p><span class="firstName"></span>, you'll &quot;flip&quot; for this one! 
+				<p><span class="firstName"></span>, you'll &quot;flip&quot; for this one! Take this unique, <span class="num6"></span>-room, <span class="num7"></span>-story home and make it shine again! Structurally sound, with minimal <span class="disaster"></span> damage! Roll up your <span class="clothing"></span> and start building your equity with this <span class="mood"></span>, <span class="adj6"></span> blank canvas! Located in this <span class="adj7"></span>, bleeding-edge neighborhood, just steps from highways and <span class="urban"></span>! Walk out of your <span class="room2"></span> onto the concrete slab patio and enjoy <span class="verb2"></span> in your fenced yard, where your green thumb will be eager to get to work! <span class="time"></span>-to-<span class="time"></span> tenant occupied! Do NOT let any of the many backyard <span class="pluAnimals"></span> inside the house! It is a criminal offense to <span class="verb3"></span> on this property! CASH only.
+
 		 		</p>
 
 		 		<img src=" ">
 		 	</div>
 		</div>
 
-		<button id="btn-reset" type="submit">Not perfect? Keep looking...</button>
+		<button id="btn-reset" type="submit">Not perfect? Need to bring your parents by? Keep looking...</button>
 	</div>
 
 	<!--	JQUERY -->
