@@ -4,7 +4,7 @@
 
 body {
 	background-color: rgba(255,243,232,1);
-
+	box-sizing: border-box;
 }
 
 h1 {
@@ -14,58 +14,72 @@ h1 {
 p {
 	font-size: 1rem;
 }
+
+/*	FORM FIELD STYLES */
 fieldset, 
 form, 
 label, 
 legend {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-
-.container {
-  margin: 0 auto;
-  padding: 30px 30px;
-  max-width: 900px;
-  min-width: 280px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1rem; 
-  border: none;
-  background-color: #fff;
-  color: rgba(63,63,61,1);
- 
-}
-.enter-name {
-	display: none;
-}
-
-fieldset {
-	display: flex;
-	flex-flow: row wrap;
-
-}
-
 input {
 	margin: 0 0 1.3rem 0;
 
 }
+select {
+	height: 2rem;
+	border-radius: 0;
+}
+option {
+	font-size: 1.2rem;
+	
+}
+#container {
+	display: block;
+	margin: 0 auto;
+	padding: 30px 30px;
+	max-width: 900px;
+	min-width: 280px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1rem; 
+	border: none;
+	background-color: #fff;
+	color: rgba(63,63,61,1);
+ 
+}
+.enter-name {
+	display: block;
+}
+
+
+input[type="text"].firstName {
+	margin: 10px 0 10px 0;
+}
+select,
+input[type="number"],
 input[type="text"] {
-	box-sizing:border-box;
-	display:block;
+	box-sizing: border-box;
+	display: block;
 	margin-bottom: 19px;
-	width:100%;
-	max-width:40rem;
-	padding:10px;
-	color:#878787;
+	width: 100%;
+	max-width: 40rem;
+	padding: 10px;
+	color: #878787;
+	background-color: #fff;
+	border-radius: 0;
 
 }
+select:focus,
+input[type="number"]:focus,
 input[type="text"]:focus {
-	background:#fff;
+	border-radius: 0;
 	border-color: rgba(255,155,68,1);
-	box-shadow:none;
+	box-shadow: none;
 	outline-color: rgba(255,155,68,1);
  	outline-style: solid;
 }
@@ -93,14 +107,16 @@ input[type="submit"]:hover {
 }
 
 #btn-generate {
+	display: block;
 	margin: 1rem 0 0 0;
 }
 #btn-reset {
 	display: block;
 }
 
-
-.questions2 {
+.questions1,
+.questions2,
+.questions3 {
 	display: block;
 }
 

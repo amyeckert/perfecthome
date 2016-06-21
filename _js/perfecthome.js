@@ -1,10 +1,8 @@
 // source and inspiration: https://github.com/mjhea0/jquery-madlibs
 
-$(document).ready(function() {
-
+$(document).ready(function(e) {
 	
 	// HIDE QUESITONS, STORY, AND REPLAY BUTTON ----------------//
-
 	$(".enter-name").show();
 
 	$(".questions1").hide();
@@ -16,10 +14,11 @@ $(document).ready(function() {
 	$("#list3").hide();
 	$(".replay").hide();
 	$("#btn-reset").hide();
-
+	
 	// RANDOMLY CHOOSE WHICH LISTING --------------------//
 
-	$("#btn-next").click(function() {
+	$("#btn-next").click(function(e) {
+	 	e.preventDefault()
 
 		var q1 = document.querySelector(".questions1");
 	 	var q2 = document.querySelector(".questions2");
@@ -27,17 +26,16 @@ $(document).ready(function() {
 
 	 	$(".enter-name").hide();
 	 	$(".firstName").empty().append($("input.firstName").val());
+	 	// $(".questions1").show(); 
+	 	// $(".questions2").show();
+ 		// $(".questions3").show();
 
 	 	var recentChoice;
 	 	var listings = [q1, q2, q3];
 
 	 	var chosen = listings[Math.floor(Math.random() * listings.length)];
-	 	
+
 	 	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
-		// var prev = chosen;
-		// var next != chosen;
-	 	
-	 	// console.log(prev);
 
 		if (chosen == q1) {
 	 		$(".questions1").show(); 
@@ -59,12 +57,16 @@ $(document).ready(function() {
 
 	});
 
+
+//  look at this: http://stackoverflow.com/questions/17891173/javascript-how-to-efficiently-randomly-select-array-item-without-repeats
+
 	// inputs for questionaires------------//
 	$(function(){
 
 	  	// ---- event handler ---- //
-	  	$("#btn-submit1").click(function() {
-
+	  	$("#btn-submit1").click(function(e) {
+	    	e.preventDefault()
+	    
 	   		// grab the values from the input boxes, then append them to the DOM
 		    $(".adj1").empty().append($("input.adj1").val());
 		    $(".favCountry").empty().append($("input.favCountry").val());
@@ -101,6 +103,7 @@ $(document).ready(function() {
 		    $(".questions1").hide();
 			$("#btn-reset").show();
 
+		    console.log("questionaire 1 working");
 		    //change the h1 message
 		   	var message = document.querySelector(".message").innerHTML = "How about this little gem?";
 
@@ -108,7 +111,8 @@ $(document).ready(function() {
 		 
 	  	});
 
-	  	$("#btn-submit2").click(function() {
+	  	$("#btn-submit2").click(function(e) {
+	    	e.preventDefault()
 
 			var dir = $("#direction option:selected" ).text();
 			var landmark = $("#landmark :selected").text();
@@ -145,8 +149,9 @@ $(document).ready(function() {
 
 		});
 
-		$("#btn-submit3").click(function() {
-	   
+		$("#btn-submit3").click(function(e) {
+	    	e.preventDefault()
+
 	    	var time = $("#time option:selected" ).text();
 
 	    	$(".num6").empty().append($("input.num6").val());
@@ -181,7 +186,7 @@ $(document).ready(function() {
 		});
 
 	// REPLAY BUTTON------------------------//
-		$("#btn-reset").click(function() {
+	$("#btn-reset").click(function(e) {
 
 		$("#btn-reset").hide();
 		$(".listings").hide();
@@ -201,5 +206,3 @@ $(document).ready(function() {
 		});	 
 	});
 });
-
-
