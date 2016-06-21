@@ -1,8 +1,10 @@
 // source and inspiration: https://github.com/mjhea0/jquery-madlibs
 
-$(document).ready(function(e) {
+$(document).ready(function() {
+
 	
 	// HIDE QUESITONS, STORY, AND REPLAY BUTTON ----------------//
+
 	$(".enter-name").show();
 
 	$(".questions1").hide();
@@ -14,11 +16,12 @@ $(document).ready(function(e) {
 	$("#list3").hide();
 	$(".replay").hide();
 	$("#btn-reset").hide();
-	
+
 	// RANDOMLY CHOOSE WHICH LISTING --------------------//
 
-	$("#btn-next").click(function(e) {
-	 	e.preventDefault()
+	$("#btn-next").click(function() {
+	 	// e.preventDefault()
+		$("#name").parsley();
 
 		var q1 = document.querySelector(".questions1");
 	 	var q2 = document.querySelector(".questions2");
@@ -26,16 +29,17 @@ $(document).ready(function(e) {
 
 	 	$(".enter-name").hide();
 	 	$(".firstName").empty().append($("input.firstName").val());
-	 	// $(".questions1").show(); 
-	 	// $(".questions2").show();
- 		// $(".questions3").show();
 
 	 	var recentChoice;
 	 	var listings = [q1, q2, q3];
 
 	 	var chosen = listings[Math.floor(Math.random() * listings.length)];
-
+	 	
 	 	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
+		// var prev = chosen;
+		// var next != chosen;
+	 	
+	 	// console.log(prev);
 
 		if (chosen == q1) {
 	 		$(".questions1").show(); 
@@ -57,15 +61,14 @@ $(document).ready(function(e) {
 
 	});
 
-
-//  look at this: http://stackoverflow.com/questions/17891173/javascript-how-to-efficiently-randomly-select-array-item-without-repeats
-
 	// inputs for questionaires------------//
 	$(function(){
 
 	  	// ---- event handler ---- //
 	  	$("#btn-submit1").click(function(e) {
 	    	e.preventDefault()
+	    	$("#questions1").parsley();
+
 	    
 	   		// grab the values from the input boxes, then append them to the DOM
 		    $(".adj1").empty().append($("input.adj1").val());
@@ -110,8 +113,9 @@ $(document).ready(function(e) {
 		 
 	  	});
 
-	  	$("#btn-submit2").click(function(e) {
-	    	e.preventDefault()
+	  	$("#btn-submit2").click(function() {
+	    	// e.preventDefault()
+	    	$("#questions2").parsley();
 
 			var dir = $("#direction option:selected" ).text();
 			var landmark = $("#landmark :selected").text();
@@ -148,8 +152,9 @@ $(document).ready(function(e) {
 
 		});
 
-		$("#btn-submit3").click(function(e) {
-	    	e.preventDefault()
+		$("#btn-submit3").click(function() {
+	    	// e.preventDefault()
+	    	$("#questions3").parsley();
 
 	    	var time = $("#time option:selected" ).text();
 
@@ -185,7 +190,7 @@ $(document).ready(function(e) {
 		});
 
 	// REPLAY BUTTON------------------------//
-	$("#btn-reset").click(function(e) {
+		$("#btn-reset").click(function() {
 
 		$("#btn-reset").hide();
 		$(".listings").hide();
@@ -205,3 +210,5 @@ $(document).ready(function(e) {
 		});	 
 	});
 });
+
+
