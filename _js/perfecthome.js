@@ -1,6 +1,7 @@
 // source and inspiration: https://github.com/mjhea0/jquery-madlibs
 
-$(document).ready(function(e) {
+$(document).ready(function() {
+
 	
 	// HIDE QUESITONS, STORY, AND REPLAY BUTTON ----------------//
 	$(".enter-name").show();
@@ -14,11 +15,35 @@ $(document).ready(function(e) {
 	$("#list3").hide();
 	$(".replay").hide();
 	$("#btn-reset").hide();
+
+	// INIT PARSLEY.JS -----------------------------------------//
+	// $(function() {          
+	//   	// if ($('#name').length > 0 )
+ //        	$('#name').parsley();
+ //   	 	// if ($('#questions1').length > 0 )
+ //       		$('#questions1').parsley();
+ //    	// if ($('#questions2').length > 0 )
+ //        	$('#questions2').parsley();
+ //        // if ($('#questions3').length > 0 )
+ //        	$('#questions3').parsley();
+	// });
+	function validateForm() {
+				    var x = document.forms["name"]["firstName"].value;
+				    if (x == null || x == "") {
+				        alert("Name must be filled out");
+				        return false;
+			    	}
+	}
+	
+
+});
 	
 	// RANDOMLY CHOOSE WHICH LISTING --------------------//
 
 	$("#btn-next").click(function(e) {
 	 	e.preventDefault()
+
+		
 
 		var q1 = document.querySelector(".questions1");
 	 	var q2 = document.querySelector(".questions2");
@@ -103,11 +128,13 @@ $(document).ready(function(e) {
 		    $(".questions1").hide();
 			$("#btn-reset").show();
 
-		    console.log("questionaire 1 working");
+			//	VALIDATION   // 
+			
+
 		    //change the h1 message
 		   	var message = document.querySelector(".message").innerHTML = "How about this little gem?";
 
-		   //	VALIDATION   //
+		   
 		 
 	  	});
 
@@ -143,6 +170,9 @@ $(document).ready(function(e) {
 	    	// hide the questions
 	    	$(".questions2").hide();
 			$("#btn-reset").show();
+
+			//	VALIDATION   // 
+			 
 
 		    //change the h1 message
 		   	var message = document.querySelector(".message").innerHTML = "This one says YOU all over it!";
@@ -182,6 +212,9 @@ $(document).ready(function(e) {
 	    	$(".questions3").hide();
 			$("#btn-reset").show();
 
+			//	VALIDATION   // 
+			 
+
 	 		var message = document.querySelector(".message").innerHTML = "Bring your toolbox!";
 		});
 
@@ -205,4 +238,3 @@ $(document).ready(function(e) {
 
 		});	 
 	});
-});
