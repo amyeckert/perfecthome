@@ -20,8 +20,6 @@ $(document).ready(function() {
 	// RANDOMLY CHOOSE WHICH LISTING --------------------//
 
 	$("#btn-next").click(function() {
-	 	// e.preventDefault()
-		$("#name").parsley();
 
 		var q1 = document.querySelector(".questions1");
 	 	var q2 = document.querySelector(".questions2");
@@ -65,11 +63,8 @@ $(document).ready(function() {
 	$(function(){
 
 	  	// ---- event handler ---- //
-	  	$("#btn-submit1").click(function(e) {
-	    	e.preventDefault()
-	    	$("#questions1").parsley();
+	  	$("#btn-submit1").click(function() {
 
-	    
 	   		// grab the values from the input boxes, then append them to the DOM
 		    $(".adj1").empty().append($("input.adj1").val());
 		    $(".favCountry").empty().append($("input.favCountry").val());
@@ -114,8 +109,6 @@ $(document).ready(function() {
 	  	});
 
 	  	$("#btn-submit2").click(function() {
-	    	// e.preventDefault()
-	    	$("#questions2").parsley();
 
 			var dir = $("#direction option:selected" ).text();
 			var landmark = $("#landmark :selected").text();
@@ -153,9 +146,7 @@ $(document).ready(function() {
 		});
 
 		$("#btn-submit3").click(function() {
-	    	// e.preventDefault()
-	    	$("#questions3").parsley();
-
+	   
 	    	var time = $("#time option:selected" ).text();
 
 	    	$(".num6").empty().append($("input.num6").val());
