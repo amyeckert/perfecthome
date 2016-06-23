@@ -19,9 +19,7 @@ $(document).ready(function() {
 	// RANDOMLY CHOOSE WHICH LISTING --------------------//
 $("#btn-next").click(function(e) {
  	e.preventDefault()
-	// $("form[name=name]").parsley();
 	
-
 	var q1 = document.querySelector(".questions1");
  	var q2 = document.querySelector(".questions2");
  	var q3 = document.querySelector(".questions3");
@@ -31,8 +29,6 @@ $("#btn-next").click(function(e) {
  	$(".enter-name").hide();
  	$(".firstName").empty().append($("input.firstName").val());
 	
- 	
-
  	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
 	// var recentChoice;
 
@@ -62,10 +58,7 @@ $("#btn-next").click(function(e) {
 	
 });
 
-
-
-
-	// inputs for questionaires------------//
+// inputs for questionaires------------//
 
  
 $("#btn-submit1").click(function(e) {
@@ -181,7 +174,7 @@ $("#btn-submit3").click(function(e) {
 	$(".questions3").hide();
 	$("#btn-reset").show();
 
-		var message = document.querySelector(".message").innerHTML = "Bring your toolbox!";
+	var message = document.querySelector(".message").innerHTML = "Bring your toolbox!";
 });
 
 
