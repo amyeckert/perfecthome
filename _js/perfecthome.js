@@ -1,6 +1,7 @@
 // source and inspiration: https://github.com/mjhea0/jquery-madlibs
 
 $(document).ready(function() {
+	$("form[name=name]").parsley();	
 	
 	// HIDE QUESITONS, STORY, AND REPLAY BUTTON ----------------//
 	$(".questions1").hide();
@@ -12,10 +13,10 @@ $(document).ready(function() {
 	$("#list3").hide();
 	$(".replay").hide();
 	$("#btn-reset").hide();
-
-	$("form[name=name]").parsley();	
-});
 	
+
+});
+
 	// RANDOMLY CHOOSE WHICH LISTING --------------------//
 $("#btn-next").click(function(e) {
  	e.preventDefault()
