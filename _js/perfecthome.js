@@ -2,22 +2,22 @@
 
 $(document).ready(function() {
 	$("form[name=name]").parsley();	
-	
+
 	// HIDE QUESITONS, STORY, AND REPLAY BUTTON ----------------//
-	$(".questions1").hide();
-	$(".questions2").hide();
-	$(".questions3").hide();
+	// $(".questions1").hide();
+	// $(".questions2").hide();
+	// $(".questions3").hide();
 	$(".listings").hide();
 	$("#list1").hide();
 	$("#list2").hide();
 	$("#list3").hide();
-	$(".replay").hide();
+	$(".replay").hide();   
 	$("#btn-reset").hide();
 	
 
 });
 
-	// RANDOMLY CHOOSE WHICH LISTING --------------------//
+	// RANDOMLY CHOOSE WHICH LISTING --------------------//	
 $("#btn-next").click(function(e) {
  	e.preventDefault()
 	
@@ -26,6 +26,8 @@ $("#btn-next").click(function(e) {
  	var q3 = document.querySelector(".questions3");
 	var listings = [q1, q2, q3];
  	var chosen = listings[Math.floor(Math.random() * listings.length)];
+
+
 
  	$(".enter-name").hide();
  	$(".firstName").empty().append($("input.firstName").val());
