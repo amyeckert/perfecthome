@@ -1,12 +1,11 @@
 // source and inspiration: https://github.com/mjhea0/jquery-madlibs
 
-$(document).ready(function() {
-	$("form[name=name]").parsley();	
+$(document).ready(function() {	
 
-	// HIDE QUESITONS, STORY, AND REPLAY BUTTON ----------------//
-	// $(".questions1").hide();
-	// $(".questions2").hide();
-	// $(".questions3").hide();
+	// HIDE STUFF	----------------//
+	$(".questions1").hide();
+	$(".questions2").hide();
+	$(".questions3").hide();
 	$(".listings").hide();
 	$("#list1").hide();
 	$("#list2").hide();
@@ -17,48 +16,64 @@ $(document).ready(function() {
 
 });
 
-	// RANDOMLY CHOOSE WHICH LISTING --------------------//	
+// RANDOMLY CHOOSE WHICH QUESTIONAIRE --------------------//	
+
 $("#btn-next").click(function(e) {
  	e.preventDefault()
-	
-	var q1 = document.querySelector(".questions1");
- 	var q2 = document.querySelector(".questions2");
- 	var q3 = document.querySelector(".questions3");
-	var listings = [q1, q2, q3];
- 	var chosen = listings[Math.floor(Math.random() * listings.length)];
 
+ 	// VALIDATION	------------//
+ 	function valFirstName() {
+		var firstName = document.forms["name"]["firstName"].value;
+	 	console.log(firstName);
 
+		if (firstName == null || firstName == "") {
+  			var isEmpty = document.getElementById("firstName")
+ 			isEmpty.className += " error";
 
- 	$(".enter-name").hide();
- 	$(".firstName").empty().append($("input.firstName").val());
-	
- 	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
-	// var recentChoice;
+ 			console.log(isEmpty);
+ 			// var errorMsg = document.createElement("div")
+ 			// empty.appendChild(errorMsg);
+ 			// errorMsg.innerHTML = "Go ahead and make one up!";
+ 			// errorMsg.className += "errorMsg";
+ 			
+			return false;	
+		}
+		else { 
+		
+			//	PICK A QUESTIONAIRE ------------//
+			var q1 = document.querySelector(".questions1");
+		 	var q2 = document.querySelector(".questions2");
+		 	var q3 = document.querySelector(".questions3");
+			var listings = [q1, q2, q3];
+		 	var chosen = listings[Math.floor(Math.random() * listings.length)];
 
-	if (chosen == q1) {
- 		$(".questions1").show(); 
- 		$(".questions2").hide();
-		$(".questions3").hide();
-		$("form[name=questions1]").parsley();
+		 	$(".enter-name").hide();
+		 	$(".firstName").empty().append($("input.firstName").val());
+			
+		 	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
+			// var recentChoice;
 
- 	}
-	 else if (chosen == q2) {
- 		$(".questions2").show();
- 		$(".questions1").hide();  
- 		$(".questions3").hide();
- 		$("form[name=questions2]").parsley();
+			if (chosen == q1) {
+		 		$(".questions1").show(); 
+		 		$(".questions2").hide();
+				$(".questions3").hide();
+		 	}
+			 else if (chosen == q2) {
+		 		$(".questions2").show();
+		 		$(".questions1").hide();  
+		 		$(".questions3").hide();
+		 	}
+			else { 
+				$(".questions3").show();
+		 		$(".questions1").hide(); 
+		 		$(".questions2").hide();
+			};
 
- 	}
-	else { 
-		$(".questions3").show();
- 		$(".questions1").hide(); 
- 		$(".questions2").hide();
- 		$("form[name=quesitons3]").parsley();
-
-	};
-
-	console.log(chosen);
-	
+			// console.log(chosen);								
+		}
+	}
+	var form = document.getElementById("name");
+	form.onsubmit = valFirstName();	
 });
 
 // inputs for questionaires------------//
@@ -189,8 +204,12 @@ $("#btn-reset").click(function(e) {
 	$("#btn-reset").hide();
 	$(".listings").hide();	
 	$("#btn-next").show();
+
+	var message = document.querySelector(".message").innerHTML = "Find Your Perfect home!";
+	$("firstName").removeClass(" error");
 	
-	var message = document.querySelector(".message").innerHTML = "Find your perfect home!";
+
+ 	console.log(firstName);
 
 	 //clear inputs
 	 $(":input").val(" ");

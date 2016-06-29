@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="_css/parsley.css"/>
 	<link rel="stylesheet" type="text/css" href="_css/perfecthome.css"/>
 
+
 </head>
 
 <body>
@@ -21,9 +22,11 @@
 		<h1 class="message">Find Your Perfect Home!</h1>
 
 		<div class="enter-name">
-			<form id="name" name="name" data-parsley-validate>
+			<form id="name" name="name" action="perfecthome.html" method="post" onsubmit="valFirstName()">
+
 				<label class="name" for="firstName">Hi! What is your first name?</label>
-				<input id="firstName" class="form-control firstName" name="firstName" type="text" aria-required="true" data-parsley-error-message="" data-parsley-trigger="change" data-parsley-required data-parsley-error-message="If you don't know your name, make one up!" required>
+
+				<input id="firstName" class="firstName" name="firstName" type="text" aria-required="true" required>
 
 				<input id="btn-next" type="submit" class="btn" value="Let's go!">	
 			</form>
@@ -35,7 +38,7 @@
 			<form id="questions1" name="questions1" data-parsley-validate>
 					
 				<label for="adj1">Enter an adjective.</label>
-				<input id="adj1" class="form-control adj1" name="adj1" type="text" placeholder="Adjective..." aria-required="true" data-parsley-error-message="" data-parsley-trigger="change" required>
+				<input id="adj1" class="form-control adj1" name="adj1" type="text" placeholder="Adjective..." aria-required="true"required>
 
 				<label for="favCounty">What is your favorite country?</label>
 				<input id="favCountry" class="form-control favCountry" name="favCountry" type="text" placeholder="My favorite country is..." aria-required="true" data-parsley-error-message="" data-parsley-trigger="change" required>
@@ -231,9 +234,11 @@
 	<!-- <script src"http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script> -->
 
 	<!-- 	FORM VALIDATION -->
-	<script src="_js/parsley.js"></script>
-	<script src="_js/bootstrap.min.js"></script>
+	<!-- <script src="_js/formvalidation.js"></script> -->
 
+	<!-- <script src="_js/parsley.js"></script>
+	<script src="_js/bootstrap.min.js"></script>
+ -->
 	<!--	CUSTOM JS -->
 	<script src="_js/perfecthome.js"></script>
 </body>
