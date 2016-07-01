@@ -20,22 +20,23 @@ $(document).ready(function() {
 
 $("#btn-next").click(function(e) {
  	e.preventDefault()
+ 	$("#name").parsley();
 
  	// VALIDATION	------------//
- 	function valFirstName() {
-		var firstName = document.forms["name"]["firstName"].value;
-	 	console.log(firstName);
+ 	// function valFirstName() {
+		// var firstName = document.forms["name"]["firstName"].value;
+	 // 	console.log(firstName);
 
-		if (firstName == null || firstName == "") {
-  			var isEmpty = document.getElementById("firstName")
- 			isEmpty.className += " error";
-			$("#empty-name").css("visibility", "visible");
+		// if (firstName == null || firstName == "") {
+  // 			var isEmpty = document.getElementById("firstName")
+ 	// 		isEmpty.className += " error";
+		// 	$("#empty-name").css("visibility", "visible");
  			
- 			console.log(isEmpty);
+ 	// 		console.log(isEmpty);
  			
-			return false;	
-		}
-		else { 
+		// 	return false;	
+		// }
+		// else { 
 		
 			//	PICK A QUESTIONAIRE ------------//
 			var q1 = document.querySelector(".questions1");
@@ -79,10 +80,10 @@ $("#btn-next").click(function(e) {
 			};
 
 			// console.log(chosen);								
-		}
-	}
-	var form = document.getElementById("name");
-	form.onsubmit = valFirstName();	
+		// }
+	// }
+	// var form = document.getElementById("name");
+	// form.onsubmit = valFirstName();	
 });
 
 // inputs for questionaires------------//
