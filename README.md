@@ -1,16 +1,17 @@
 # perfecthome
-Find your perfect home, Mad-Libs-style...
+Find your perfect home. Or not.
 
-A work in progress!
+all images © Amy Eckert. 
 
-This ultimately will be part of larger site called Manufacturing Home which is a photography project 
-of mine that explores ideas about place, comfort, class and mobility 
-through photographs of mass-market, factory-built homes in America:
-Can you mass-produce a sense of home? Can you build it on an assembly line? 
+A work in progress! 
 
-The project includes essays by Lynne Tillman and Charles D'ambrosio, 
-and was first published in Nest Magazine. 
+This is an off-shoot of my larger project called Manufacturing Home which is a photography project 
+exploring ideas about place, comfort, class and mobility 
+through photographs of mass-market, factory-built homes in America.
+(current site: www.manufacturinghome.com, which I'm completely rebuilding. Eventually...)
 
-(current site: www.manufacturinghome.com, which I'm completely overhauling eventually.)
 
- Stay tuned!
+
+
+
+
