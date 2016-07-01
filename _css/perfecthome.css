@@ -95,14 +95,17 @@ input[type="text"].firstName {
 }
 
 select:focus,
+button[type="submit"]:focus,
+button[type="select"]:active,
+button[type="submit"]:active:focus,
 input[type="number"]:focus,
 input[type="text"]:focus {
-	
+	/*color: #fff;*/
 	border-color: rgba(255,155,68,1);
 	box-shadow: none;
 	outline-color: rgba(255,155,68,1);
- 	outline-style: none;
-
+ 	outline: none;
+ 	box-shadow: none;
 }
 button[type="submit"], 
 input[type="submit"] {
@@ -114,7 +117,7 @@ input[type="submit"] {
 	outline-color: #fff;
 	color: #fff;
 	font-size: 1.5rem;
-	outline-offset: none;
+	outline-offset: 0;
 
 }
 button[type="submit"]:hover, 
