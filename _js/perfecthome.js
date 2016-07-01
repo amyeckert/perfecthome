@@ -29,12 +29,9 @@ $("#btn-next").click(function(e) {
 		if (firstName == null || firstName == "") {
   			var isEmpty = document.getElementById("firstName")
  			isEmpty.className += " error";
-
+			$("#empty-name").css("visibility", "visible");
+ 			
  			console.log(isEmpty);
- 			// var errorMsg = document.createElement("div")
- 			// empty.appendChild(errorMsg);
- 			// errorMsg.innerHTML = "Go ahead and make one up!";
- 			// errorMsg.className += "errorMsg";
  			
 			return false;	
 		}
@@ -57,16 +54,28 @@ $("#btn-next").click(function(e) {
 		 		$(".questions1").show(); 
 		 		$(".questions2").hide();
 				$(".questions3").hide();
+				$('body').css({
+					"background-image" : "url('_img/tablebeast-hd.jpg')", 
+					"background-size" : "contain"
+				});
 		 	}
 			 else if (chosen == q2) {
 		 		$(".questions2").show();
 		 		$(".questions1").hide();  
 		 		$(".questions3").hide();
+		 		$('body').css({
+					"background-image" : "url('_img/couches-hd.jpg')", 
+					"background-size" : "contain"
+				});
 		 	}
 			else { 
 				$(".questions3").show();
 		 		$(".questions1").hide(); 
 		 		$(".questions2").hide();
+		 		$('body').css({
+					"background-image" : "url('_img/seam2-hd.jpg')", 
+					"background-size" : "contain"
+				});
 			};
 
 			// console.log(chosen);								
@@ -198,25 +207,28 @@ $("#btn-submit3").click(function(e) {
 
 	// REPLAY BUTTON------------------------//
 
-$("#btn-reset").click(function(e) {
+// $("#btn-reset").click(function(e) {
+// 	var message = document.querySelector(".message").innerHTML = "Find Your Perfect Home!";
 
-	$(".enter-name").show();
-	$("#btn-reset").hide();
-	$(".listings").hide();	
-	$("#btn-next").show();
-
-	var message = document.querySelector(".message").innerHTML = "Find Your Perfect home!";
-	$("firstName").removeClass(" error");
+// 	var reset = document.getElementById("firstName").className = "";
 	
 
- 	console.log(firstName);
+// 	$(".enter-name").show();
+// 	$("#btn-reset").hide();
+// 	$(".listings").hide();	
+// 	$("#btn-next").show();
+// 	// $("#empty-name").hide();
+// 	$("#empty-name").css("visibility", "hidden");
+	
 
-	 //clear inputs
-	 $(":input").val(" ");
-	 $("#btn-next").val("Let's go!");
-	 $("#btn-submit1").val("Call the movers!");
-	 $("#btn-submit2").val("Get packing!");
-	 $("#btn-submit3").val("Call the bank!");
+//  	console.log(firstName, reset);
 
-});	 
+// 	 //clear inputs
+// 	 $(":input").val(" ");
+// 	 $("#btn-next").val("Let's go!");
+// 	 $("#btn-submit1").val("Call the movers!");
+// 	 $("#btn-submit2").val("Get packing!");
+// 	 $("#btn-submit3").val("Call the bank!");
+
+// });	 
 

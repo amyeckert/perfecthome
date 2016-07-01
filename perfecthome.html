@@ -26,10 +26,13 @@
 
 				<label class="name" for="firstName">Hi! What is your first name?</label>
 
-				<input id="firstName" class="firstName" name="firstName" type="text" aria-required="true" required>
+				<input id="firstName" class="firstName" name="firstName" type="text" aria-required="true" required autofocus>
+				<p id="empty-name" class="errorMsg">Go ahead and make one up!</p>
 
-				<input id="btn-next" type="submit" class="btn" value="Let's go!">	
+				<input id="btn-next" type="submit" class="btn" value="Let's go!">
+
 			</form>
+		
 		</div>
 
 		<!-- QESTIONS FOR LISTING 1 -->
@@ -225,7 +228,7 @@
 		 	</div>
 		</div>
 
-		<button id="btn-reset" class="btn" type="submit">Not perfect? Need to bring your parents by? Keep looking...</button>
+		<button id="btn-reset" class="btn" type="submit" onClick="window.location.reload()">Not perfect? Need to bring your parents by? Keep looking...</button>
 	</div>
 
 	<!--	JQUERY -->
@@ -236,9 +239,9 @@
 	<!-- 	FORM VALIDATION -->
 	<!-- <script src="_js/formvalidation.js"></script> -->
 
-	<!-- <script src="_js/parsley.js"></script>
+	<script src="_js/parsley.js"></script>
 	<script src="_js/bootstrap.min.js"></script>
- -->
+
 	<!--	CUSTOM JS -->
 	<script src="_js/perfecthome.js"></script>
 </body>
