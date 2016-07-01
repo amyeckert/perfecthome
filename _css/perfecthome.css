@@ -80,7 +80,7 @@ input[type="number"],
 input[type="text"] {
 	box-sizing: border-box;
 	display: block;
-	margin-bottom: 19px;
+	margin-bottom: 10px;
 	width: 100%;
 	max-width: 50%;
 	padding: 10px;
@@ -143,18 +143,6 @@ input[type="text"].error {
 	color: rgba(255,0,68,1);
 
 }
-
-/*.errorMsg {
-	display: block;
-	height: 40px;
-	font-weight: 100%
-	color: rgba(255,0,68,1);
-	font-family: inherit;
-
-}*/
-
-
-
 #btn-generate {
 	display: block;
 	margin: 1rem 0 0 0;
@@ -162,7 +150,6 @@ input[type="text"].error {
 #btn-reset {
 	display: block;
 }
-
 .questions1,
 .questions2,
 .questions3 {

@@ -20,70 +20,48 @@ $(document).ready(function() {
 
 $("#btn-next").click(function(e) {
  	e.preventDefault()
- 	$("#name").parsley();
+	
+		//	PICK A QUESTIONAIRE ------------//
+		var q1 = document.querySelector(".questions1");
+	 	var q2 = document.querySelector(".questions2");
+	 	var q3 = document.querySelector(".questions3");
+		var listings = [q1, q2, q3];
+	 	var chosen = listings[Math.floor(Math.random() * listings.length)];
 
- 	// VALIDATION	------------//
- 	// function valFirstName() {
-		// var firstName = document.forms["name"]["firstName"].value;
-	 // 	console.log(firstName);
-
-		// if (firstName == null || firstName == "") {
-  // 			var isEmpty = document.getElementById("firstName")
- 	// 		isEmpty.className += " error";
-		// 	$("#empty-name").css("visibility", "visible");
- 			
- 	// 		console.log(isEmpty);
- 			
-		// 	return false;	
-		// }
-		// else { 
+	 	$(".enter-name").hide();
+	 	$(".firstName").empty().append($("input.firstName").val());
 		
-			//	PICK A QUESTIONAIRE ------------//
-			var q1 = document.querySelector(".questions1");
-		 	var q2 = document.querySelector(".questions2");
-		 	var q3 = document.querySelector(".questions3");
-			var listings = [q1, q2, q3];
-		 	var chosen = listings[Math.floor(Math.random() * listings.length)];
+	 	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
+		// var recentChoice;
 
-		 	$(".enter-name").hide();
-		 	$(".firstName").empty().append($("input.firstName").val());
-			
-		 	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
-			// var recentChoice;
+		if (chosen == q1) {
+	 		$(".questions1").show(); 
+	 		$(".questions2").hide();
+			$(".questions3").hide();
+			$('body').css({
+				"background-image" : "url('_img/tablebeast-hd.jpg')", 
+				"background-size" : "contain"
+			});
+	 	}
+		 else if (chosen == q2) {
+	 		$(".questions2").show();
+	 		$(".questions1").hide();  
+	 		$(".questions3").hide();
+	 		$('body').css({
+				"background-image" : "url('_img/couches-hd.jpg')", 
+				"background-size" : "contain"
+			});
+	 	}
+		else { 
+			$(".questions3").show();
+	 		$(".questions1").hide(); 
+	 		$(".questions2").hide();
+	 		$('body').css({
+				"background-image" : "url('_img/seam2-hd.jpg')", 
+				"background-size" : "contain"
+			});
+		};
 
-			if (chosen == q1) {
-		 		$(".questions1").show(); 
-		 		$(".questions2").hide();
-				$(".questions3").hide();
-				$('body').css({
-					"background-image" : "url('_img/tablebeast-hd.jpg')", 
-					"background-size" : "contain"
-				});
-		 	}
-			 else if (chosen == q2) {
-		 		$(".questions2").show();
-		 		$(".questions1").hide();  
-		 		$(".questions3").hide();
-		 		$('body').css({
-					"background-image" : "url('_img/couches-hd.jpg')", 
-					"background-size" : "contain"
-				});
-		 	}
-			else { 
-				$(".questions3").show();
-		 		$(".questions1").hide(); 
-		 		$(".questions2").hide();
-		 		$('body').css({
-					"background-image" : "url('_img/seam2-hd.jpg')", 
-					"background-size" : "contain"
-				});
-			};
-
-			// console.log(chosen);								
-		// }
-	// }
-	// var form = document.getElementById("name");
-	// form.onsubmit = valFirstName();	
 });
 
 // inputs for questionaires------------//
@@ -91,6 +69,7 @@ $("#btn-next").click(function(e) {
  
 $("#btn-submit1").click(function(e) {
 	e.preventDefault()
+	// $('#questions1').parsley();
 
 		// grab the values from the input boxes, then append them to the DOM
     $(".adj1").empty().append($("input.adj1").val());
@@ -134,6 +113,7 @@ $("#btn-submit1").click(function(e) {
 
 $("#btn-submit2").click(function(e) {
 	e.preventDefault()
+	// $('#questions2').parsley();
 
 	var dir = $("#direction option:selected" ).text();
 	var landmark = $("#landmark :selected").text();
@@ -171,6 +151,7 @@ $("#btn-submit2").click(function(e) {
 
 $("#btn-submit3").click(function(e) {
 	e.preventDefault()
+	// $('#questions3').parsley();
 
 	var time = $("#time option:selected" ).text();
 

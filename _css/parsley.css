@@ -17,10 +17,11 @@ textarea.parsley-error {
 }
 
 .parsley-errors-list {
-  margin: 2px 0 3px;
+  color: rgba(255,0,68,1);
+  margin: 2px 0 15px;
   padding: 0;
   list-style-type: none;
-  font-size: 0.9em;
+  font-size: 1rem;
   line-height: 0.9em;
   opacity: 0;
 
@@ -32,4 +33,8 @@ textarea.parsley-error {
 
 .parsley-errors-list.filled {
   opacity: 1;
+}
+
+.parsley-custom-error-message {
+  font-size: 1.3rem;
 }
