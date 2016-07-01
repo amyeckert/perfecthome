@@ -12,7 +12,8 @@ $(document).ready(function() {
 	$("#list3").hide();
 	$(".replay").hide();   
 	$("#btn-reset").hide();
-	
+	$(".share").hide();
+	$(".eliza").hide();
 
 });
 
@@ -106,6 +107,8 @@ $("#btn-submit1").click(function(e) {
     // hide the questions
     $(".questions1").hide();
 	$("#btn-reset").show();
+	$(".share").show();
+	$(".eliza").show();
 
     //change the h1 message
    	var message = document.querySelector(".message").innerHTML = "How about this little gem?"; 
@@ -143,7 +146,10 @@ $("#btn-submit2").click(function(e) {
 
 	// hide the questions
 	$(".questions2").hide();
-	$("#btn-reset").show();		 
+	$("#btn-reset").show();	
+
+	$(".share").show();
+	$(".eliza").show(); 
 
     //change the h1 message
    	var message = document.querySelector(".message").innerHTML = "This one says YOU all over it!";
@@ -182,6 +188,9 @@ $("#btn-submit3").click(function(e) {
 	// hide the questions
 	$(".questions3").hide();
 	$("#btn-reset").show();
+
+	$(".share").show();
+	$(".eliza").show();
 
 	var message = document.querySelector(".message").innerHTML = "Bring your toolbox!";
 });
