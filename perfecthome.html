@@ -17,6 +17,18 @@
 </head>
 
 <body>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+	  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+
 	<div id="container">
 		<h1 class="message">Find Your Perfect Home!</h1>
 
@@ -110,7 +122,7 @@
 				<label for="num4">It's a numbers game! <br> Enter a number from 0 - 10.</label><br>
 				<input id="num4" class="form-control num4" name="num4" type="number" data-parsley-type="number" data-parsley-range="[0, 10]" placeholder="#" data-parsley-error-message="Try that one again." data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required>
 
-				<label for="emotion">Enter an emotion.</label>
+				<label for="emotion">Enter an state of mind.</label>
 				<input id="emotion" class="form-control emotion" name="emotion" type="text"  placeholder="Joy? Chagrin?" data-parsley-error-message="Get in touch with your emotional side." data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required>
 
 				<label for="direction">Choose a direction.</label><br>
@@ -127,7 +139,7 @@
 				<label for="adj4">Enter an adjective.</label>
 				<input id="adj4" class="form-conrol adj4" type="text"  name="adj4" placeholder="Adjective..." data-parsley-error-message="Literally thousands to choose from!" data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required>
 
-				<label for="pubInst">Name a public institution.</label>
+				<label for="pubInst">Name a public institution or facility.</label>
 				<input id="pubInst" class="form-conrol pubInst" name="pubInst" type="text"  placeholder="Prison? Elementary School?" data-parsley-error-message="A public institution is a juristic person in the United States which is backed through public funds and controlled by the state." data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required>
 
 				<label for="favCity">What's your favorite city?</label>
@@ -226,9 +238,12 @@
 
 		<button id="btn-reset" class="btn" type="submit" onClick="window.location.reload()">Still need to bring your parents by? Keep looking...</button>
 
-		<div class="share"> Share icons will go in here! </div>
+		<div class="share">
+			<div class="fb-share-button" data-href="http://www.perfecthomequiz.com" data-layout="button" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.perfecthomequiz.com%2F&amp;src=sdkpreparse"><img src="_img/fb_icon.svg"></a></div>
+		</div>
 
-		<div class="eliza"><button><a href="http://eliza.liveinsouthjersey.com" target="_blank">Oh. You were looking for <em>actual</em> real estate listings?</a></button></div>
+
+		<div class="eliza"><a href="http://eliza.liveinsouthjersey.com" target="_blank">Oh. You were looking for <em>actual</em> real estate listings?</a></div>
 
 	</div>
 

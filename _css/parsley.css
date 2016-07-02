@@ -8,11 +8,12 @@ textarea.parsley-success {
   border: 1px solid #D6E9C6;
 }
 
-input.parsley-error,
+input[type="text"].parsley-error,
+input[type="number"].parsley-error,
 select.parsley-error,
 textarea.parsley-error {
   color: #B94A48;
-  background-color: #F2DEDE;
+  // background-color: #F2DEDE;
   border: 1px solid rgba(255,0,68,1);
 }
 
