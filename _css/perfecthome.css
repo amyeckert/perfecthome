@@ -62,11 +62,8 @@ a:hover {
 	border-radius: 0;
 	box-shadow: none;
 	outline: 1px solid rgba(255,155,68,1);
-
-
 }
 #container {
-	/*position: relative;*/
 	display: block;
 	margin: 0 auto;
 	padding: 30px 30px;
@@ -191,7 +188,10 @@ input[type="text"].error {
 	font-size: 1.5rem;
 }
 
-
+span {
+	text-transform: lowercase;
+}
+span#time1,
 span.firstName,
 span.water,
 span.bestie,
