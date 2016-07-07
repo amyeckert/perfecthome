@@ -40,8 +40,7 @@ $("#btn-next").click(function(e) {
 	 		$(".questions2").hide();
 			$(".questions3").hide();
 			$('body').css({
-				"background-image" : "url('_img/tablebeast-hd.jpg')", 
-				"background-size" : "contain"
+				"background-image" : "url('_img/tablebeast-hd.jpg')"
 			});
 	 	}
 		 else if (chosen == q2) {
@@ -49,8 +48,7 @@ $("#btn-next").click(function(e) {
 	 		$(".questions1").hide();  
 	 		$(".questions3").hide();
 	 		$('body').css({
-				"background-image" : "url('_img/couches-hd.jpg')", 
-				"background-size" : "contain"
+				"background-image" : "url('_img/couches-hd.jpg')"
 			});
 	 	}
 		else { 
@@ -58,8 +56,7 @@ $("#btn-next").click(function(e) {
 	 		$(".questions1").hide(); 
 	 		$(".questions2").hide();
 	 		$('body').css({
-				"background-image" : "url('_img/seam2-hd.jpg')", 
-				"background-size" : "contain"
+				"background-image" : "url('_img/seam2-hd.jpg')"
 			});
 		};
 
