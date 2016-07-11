@@ -38,6 +38,7 @@
 				<label class="name" for="firstName">Hi! What is your first name?</label>
 
 				<input id="firstName" class="firstName" name="firstName" type="text" data-parsley-error-message="Go ahead and make one up!" data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required autofocus>
+				
 				<input id="btn-next" type="submit" class="btn" value="Let's go!">
 
 			</form>
@@ -45,18 +46,18 @@
 		</div>
 
 		<!-- QESTIONS FOR LISTING 1 -->
-		<div class="questions1">
+		<div class="q1">
 
 			<form id="questions1" name="questions1" data-parsley-validate>
 					
 				<label for="adj1">Enter an adjective.</label>
-				<input id="adj1" class="form-control adj1" name="adj1" type="text" placeholder="adjective..." data-parsley-error-message="Give your noun a little attitude!" data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required>
+				<input id="adj1" class="form-control adj1" name="adj1" type="text" placeholder="Adjective..." data-parsley-error-message="Give your noun a little attitude!" data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required>
 
 				<label for="favCounty">What is your favorite country?</label>
 				<input id="favCountry" class="form-control favCountry" name="favCountry" type="text" placeholder="New Zealand? Namibia?" data-parsley-error-message="There are currently 195 countries to choose from!" data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required>
 
 				<label for="bestie">What is the first name of your best friend?</label>
-				<input id="bestie" class="form-control bestie" name="bestie" type="text" placeholder="My bestie..." data-parsley-error-message="Is your best friend invisible?" data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required>
+				<input id="bestie" class="form-control bestie" name="bestie" type="text" placeholder="My bestie is..." data-parsley-error-message="Is your best friend invisible?" data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required>
 
 				<label for="adj2">Enter another adjective.</label>
 				<input id="adj2" class="form-control adj2" name="adj2" type="text" placeholder="Another adjective..."data-parsley-error-message="Give your noun a little attitude!" data-parsley-trigger="change" data-parsley-required="true" aria-required="true" required>
@@ -103,7 +104,7 @@
 		</div>
 	
 		<!-- QESTIONS FOR LISTING 2 -->
-		<div class="questions2">
+		<div class="q2">
 
 			<form id="questions2" name="questions2" data-parsley-validate>
 
@@ -162,7 +163,7 @@
 		</div>
 
 		<!-- QESTIONS FOR LISTING 3 -->
-		<div class="questions3">
+		<div class="q3">
 			<form id="questions3" name="questions3" data-parsley-validate>
 
 				<label for="num6">Enter a number from 0 - 5.</label><br>
@@ -252,11 +253,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="_js/bootstrap.min.js"></script>
 
-	<!--	CUSTOM JS -->
-	<script src="_js/perfecthome.js"></script>
-
 	<!-- 	FORM VALIDATION -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.4.3/parsley.js"></script>
+<!--	CUSTOM JS -->
+	<script src="_js/perfecthome.js"></script>
 
 
 </body>
