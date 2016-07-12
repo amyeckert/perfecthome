@@ -167,9 +167,9 @@ input[type="text"].error {
 #btn-reset {
 	display: block;
 }
-.questions1,
-.questions2,
-.questions3 {
+.q1,
+.q2,
+.q3 {
 	display: block;
 }
 

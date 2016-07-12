@@ -3,9 +3,9 @@
 $(document).ready(function() {	
 
 	// HIDE STUFF	----------------//
-	$(".q1").hide();
-	$(".q2").hide();
-	$(".q3").hide();
+	$(".questions1").hide();
+	$(".questions2").hide();
+	$(".questions3").hide();
 	$(".listings").hide();
 	$("#list1").hide();
 	$("#list2").hide();
@@ -17,69 +17,50 @@ $(document).ready(function() {
 
 });
 
-//	PICK A QUESTIONAIRE ------------//
-function pickQ() {
-
-	var q1 = document.querySelector(".q1");
- 	var q2 = document.querySelector(".q2");
- 	var q3 = document.querySelector(".q3");
-	var listings = [q1, q2, q3];
- 	var chosen = listings[Math.floor(Math.random() * listings.length)];
-
- 	$(".enter-name").hide();
- 	$(".firstName").empty().append($("input.firstName").val());
-	
- 	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
-	// var recentChoice;
-
-	if (chosen == q1) {
- 		$(".q1").show(); 
- 		$(".q2").hide();
-		$(".q3").hide();
-		$('body').css({
-			"background-image" : "url('https://www.dropbox.com/s/3f1o48v63f100a6/tablebeast-hd.jpg?raw=1')" 
-		});
- 	}
-	 else if (chosen == q2) {
- 		$(".q2").show();
- 		$(".q1").hide();  
- 		$(".q3").hide();
- 		$('body').css({
-			"background-image" : "url('https://www.dropbox.com/s/7079ec574nda8rz/couches-hd.jpg?raw=1')"
-		});
- 	}
-	else { 
-		$(".q3").show();
- 		$(".q1").hide(); 
- 		$(".q2").hide();
- 		$('body').css({
-			"background-image" : "url('https://www.dropbox.com/s/4edthf0jb494dhh/seam2-hd.jpg?raw=1')"
-		});
-	};
-}
-
 // RANDOMLY CHOOSE WHICH QUESTIONAIRE --------------------//	
-$("#name").parsley();
 
 $("#btn-name").click(function(e) {
+ 	e.preventDefault()
+	
+		//	PICK A QUESTIONAIRE ------------//
+		var q1 = document.querySelector(".questions1");
+	 	var q2 = document.querySelector(".questions2");
+	 	var q3 = document.querySelector(".questions3");
+		var listings = [q1, q2, q3];
+	 	var chosen = listings[Math.floor(Math.random() * listings.length)];
 
- 
- 	$("#name").submit(function(event) {
+	 	$(".enter-name").hide();
+	 	$(".firstName").empty().append($("input.firstName").val());
+		
+	 	//need code to check to see what previous selection was, so that it doesn't repeat in it's randomness.
+		// var recentChoice;
 
- 		// Validate form fields
-	    $(this).parsley().validate();
-	    // If the form is valid, will proceed with submission.
-	    if ($(this).parsley().isValid()) {
-	        console.log('valid');
-	    pickQ();
-	    console.log(chosen);
-			
+		if (chosen == q1) {
+	 		$(".questions1").show(); 
+	 		$(".questions2").hide();
+			$(".questions3").hide();
+			$('body').css({
+				"background-image" : "url('https://www.dropbox.com/s/3f1o48v63f100a6/tablebeast-hd.jpg?raw=1')" 
+			});
+	 	}
+		 else if (chosen == q2) {
+	 		$(".questions2").show();
+	 		$(".questions1").hide();  
+	 		$(".questions3").hide();
+	 		$('body').css({
+				"background-image" : "url('https://www.dropbox.com/s/7079ec574nda8rz/couches-hd.jpg?raw=1')"
+			});
+	 	}
+		else { 
+			$(".questions3").show();
+	 		$(".questions1").hide(); 
+	 		$(".questions2").hide();
+	 		$('body').css({
+				"background-image" : "url('https://www.dropbox.com/s/4edthf0jb494dhh/seam2-hd.jpg?raw=1')"
+			});
 		};
 
-	 })	
-	event.preventDefault();
 });
-
 
 // inputs for questionaires------------//
 
@@ -121,7 +102,7 @@ $("#btn-submit1").click(function(e) {
 	$(".replay").show();
 
     // hide the questions
-    $(".q1").hide();
+    $(".questions1").hide();
 	$("#btn-reset").show();
 	$(".share").show();
 	$(".eliza").show();
@@ -161,7 +142,7 @@ $("#btn-submit2").click(function(e) {
 	$(".replay").show();
 
 	// hide the questions
-	$(".q2").hide();
+	$(".questions2").hide();
 	$("#btn-reset").show();	
 
 	$(".share").show();
@@ -178,13 +159,13 @@ $("#btn-submit3").click(function(e) {
 	var time = $("#time option:selected" ).text();
 
 	$(".num6").empty().append($("input.num6").val());
-	$(".num7").empty().append($("input.num7").val());
+	    $(".num7").empty().append($("input.num7").val());
 	$(".disaster").empty().append($("input.disaster").val());
 	$(".clothing").empty().append($("input.clothing").val());
 	$(".mood").empty().append($("input.mood").val());
 	$(".adj6").empty().append($("input.adj6").val());
 	$(".adj7").empty().append($("input.adj7").val());
-    $(".urban").empty().append($("input.urban").val());
+	    $(".urban").empty().append($("input.urban").val());
 	$(".room2").empty().append($("input.room2").val());
 	$(".verb2").empty().append($("input.verb2").val());
 	$(".time").empty().append(time);
@@ -202,7 +183,7 @@ $("#btn-submit3").click(function(e) {
 	$(".replay").show();
 
 	// hide the questions
-	$(".q3").hide();
+	$(".questions3").hide();
 	$("#btn-reset").show();
 
 	$(".share").show();
