@@ -17,9 +17,12 @@ $(document).ready(function() {
 
 });
 
-//	PICK A QUESTIONAIRE ------------//
-function pickQ() {
+// RANDOMLY CHOOSE WHICH QUESTIONAIRE --------------------//	
 
+$("#btn-name").click(function(e) {
+ 	e.preventDefault();
+	
+	//	PICK A QUESTIONAIRE ------------//
 	var q1 = document.querySelector(".q1");
  	var q2 = document.querySelector(".q2");
  	var q3 = document.querySelector(".q3");
@@ -56,30 +59,7 @@ function pickQ() {
 			"background-image" : "url('https://www.dropbox.com/s/4edthf0jb494dhh/seam2-hd.jpg?raw=1')"
 		});
 	};
-}
-
-// RANDOMLY CHOOSE WHICH QUESTIONAIRE --------------------//	
-$("#name").parsley();
-
-$("#btn-name").click(function(e) {
-
- 
- 	$("#name").submit(function(event) {
-
- 		// Validate form fields
-	    $(this).parsley().validate();
-	    // If the form is valid, will proceed with submission.
-	    if ($(this).parsley().isValid()) {
-	        console.log('valid');
-	    pickQ();
-	    console.log(chosen);
-			
-		};
-
-	 })	
-	event.preventDefault();
 });
-
 
 // inputs for questionaires------------//
 
@@ -88,7 +68,7 @@ $("#btn-submit1").click(function(e) {
 	e.preventDefault()
 	// $('#questions1').parsley();
 
-		// grab the values from the input boxes, then append them to the DOM
+	// grab the values from the input boxes, then append them to the DOM
     $(".adj1").empty().append($("input.adj1").val());
     $(".favCountry").empty().append($("input.favCountry").val());
     $(".bestie").empty().append($("input.bestie").val());
@@ -117,7 +97,7 @@ $("#btn-submit1").click(function(e) {
 	$("#list3").hide();
 
 	//	change button to replay button
-	$("#btn-name").hide();
+	$("#btn-next").hide();
 	$(".replay").show();
 
     // hide the questions
@@ -157,7 +137,7 @@ $("#btn-submit2").click(function(e) {
 	$("#list3").hide();
 
 	//	change button to replay button
-	$("#btn-name").hide();
+	$("#btn-next").hide();
 	$(".replay").show();
 
 	// hide the questions
@@ -178,13 +158,13 @@ $("#btn-submit3").click(function(e) {
 	var time = $("#time option:selected" ).text();
 
 	$(".num6").empty().append($("input.num6").val());
-	$(".num7").empty().append($("input.num7").val());
+	    $(".num7").empty().append($("input.num7").val());
 	$(".disaster").empty().append($("input.disaster").val());
 	$(".clothing").empty().append($("input.clothing").val());
 	$(".mood").empty().append($("input.mood").val());
 	$(".adj6").empty().append($("input.adj6").val());
 	$(".adj7").empty().append($("input.adj7").val());
-    $(".urban").empty().append($("input.urban").val());
+	    $(".urban").empty().append($("input.urban").val());
 	$(".room2").empty().append($("input.room2").val());
 	$(".verb2").empty().append($("input.verb2").val());
 	$(".time").empty().append(time);
@@ -198,7 +178,7 @@ $("#btn-submit3").click(function(e) {
 	$("#list3").show();
 
 	//	change button to replay button
-	$("#btn-name").hide();
+	$("#btn-next").hide();
 	$(".replay").show();
 
 	// hide the questions
@@ -223,7 +203,7 @@ $("#btn-submit3").click(function(e) {
 // 	$(".enter-name").show();
 // 	$("#btn-reset").hide();
 // 	$(".listings").hide();	
-// 	$("#btn-name").show();
+// 	$("#btn-next").show();
 // 	// $("#empty-name").hide();
 // 	$("#empty-name").css("visibility", "hidden");
 	
@@ -232,7 +212,7 @@ $("#btn-submit3").click(function(e) {
 
 // 	 //clear inputs
 // 	 $(":input").val(" ");
-// 	 $("#btn-name").val("Let's go!");
+// 	 $("#btn-next").val("Let's go!");
 // 	 $("#btn-submit1").val("Call the movers!");
 // 	 $("#btn-submit2").val("Get packing!");
 // 	 $("#btn-submit3").val("Call the bank!");
