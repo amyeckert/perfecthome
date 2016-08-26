@@ -158,13 +158,13 @@ $("#btn-submit3").click(function(e) {
 	var time = $("#time option:selected" ).text();
 
 	$(".num6").empty().append($("input.num6").val());
-	    $(".num7").empty().append($("input.num7").val());
+	$(".num7").empty().append($("input.num7").val());
 	$(".disaster").empty().append($("input.disaster").val());
 	$(".clothing").empty().append($("input.clothing").val());
 	$(".mood").empty().append($("input.mood").val());
 	$(".adj6").empty().append($("input.adj6").val());
 	$(".adj7").empty().append($("input.adj7").val());
-	    $(".urban").empty().append($("input.urban").val());
+	$(".urban").empty().append($("input.urban").val());
 	$(".room2").empty().append($("input.room2").val());
 	$(".verb2").empty().append($("input.verb2").val());
 	$(".time").empty().append(time);
