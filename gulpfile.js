@@ -10,7 +10,7 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 
 var paths = {
-    styles: ['./css/scss/style.scss', './css/scss/ie.scss']
+    styles: ['./scss/style.scss', './scss/ie.scss']
 }
 
 gulp.task('css', function ()
@@ -21,33 +21,33 @@ gulp.task('css', function ()
         .pipe(minifycss())
         .pipe(autoprefixer({ browsers: ['last 3 versions'] }))
         .pipe(gulp.dest('css'))
-        .pipe(notify({message: 'SCSS Compiled!'}));
+        .pipe(notify({message: 'SASS-iness Compiled!'}));
 });
 
-gulp.task('js', function ()
-{
+// gulp.task('js', function ()
+// {
 
-    gulp.src('./js/vendor/plugins/*.js')
-        .pipe(plumber())
-        .pipe(concat('plugins.min.js'))
-        //.pipe(uglify())
-        .pipe(gulp.dest('./js/vendor'))
-        .pipe(notify({message: 'Plugins Compiled and Minified!'}));
+//     gulp.src('./js/vendor/plugins/*.js')
+//         .pipe(plumber())
+//         .pipe(concat('plugins.min.js'))
+//         //.pipe(uglify())
+//         .pipe(gulp.dest('./js/vendor'))
+//         .pipe(notify({message: 'Plugins Compiled and Minified!'}));
 
-    gulp.src('./js/functionality.js')
-        .pipe(plumber())
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('js'))
-        .pipe(notify({message: 'JS Compiled!'}));
-});
+//     gulp.src('./js/functionality.js')
+//         .pipe(plumber())
+//         .pipe(uglify())
+//         .pipe(rename({suffix: '.min'}))
+//         .pipe(gulp.dest('js'))
+//         .pipe(notify({message: 'JS Compiled!'}));
+// });
 
 gulp.task('watch', function ()
 {
-    gulp.watch('./css/scss/*.scss', ['css']);
-    gulp.watch('./css/scss/**/*.scss', ['css']);
-    gulp.watch('./js/vendor/plugins/*.js', ['js']);
-    gulp.watch('./js/functionality.js', ['js']);
+    gulp.watch('./scss/*.scss');
+    gulp.watch('./scss/**/*.scss');
+    // gulp.watch('./js/vendor/plugins/*.js', ['js']);
+    // gulp.watch('./js/functionality.js', ['js']);
 });
 
 gulp.task('default', ['watch']);
