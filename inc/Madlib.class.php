@@ -20,12 +20,13 @@ class Madlib {
  		// adds above parameters as an array inside $qustionaire array, [] is shorcut to so this.
  		$this->questionaire[$weight] = array(
  			'qid' => $qid, //key
- 			'title' => $label, //input label
- 			'placeholder' => $placeholder, //placeholder text for html input.
  			'weight' => $weight, //order within the form, is an array.
- 			'options' => $options, //for select from list options
- 			'validation' => $validation, //validation function 
- 			'process' => $process, //process function for fixing grammar, etc. 
+      'title' => $label, //input label ie: the text of the question
+      'placeholder' => $placeholder, //placeholder text for html input.
+ 			'options' => $options, //for select from list options, is an array.
+      'value' => $value, //the value of the text or number or option selected.
+      'validation' => $validation, // form validation function 
+      'process' => $process, //process function for fixing grammar, etc. 
  			); 
 
  	}
@@ -50,9 +51,4 @@ class Madlib {
   }
 
 }
-
-
-
-
-
 ?>
