@@ -9,6 +9,7 @@ class Madlib {
 	public $id = ''; 
 	public $questionaire = array ();
   public $listing = ''; 
+
   //build it:
  	public function __construct($id) { //will be 1, 2 or 3 
 	 		$this->id = $id;
@@ -16,7 +17,7 @@ class Madlib {
  	}	
   // add a question to the questionaire 
   //                                                            (last 3 are optional when defaults set in param)
- 	public function addQuestion($qid, $label, $placeholder, $weight, $options = null, $validation = '', $process = '') {
+ 	public function addQuestion($qid, $label, $placeholder, $weight, $options = null, $value='', $validation = '', $process = '') {
  		// adds above parameters as an array inside $qustionaire array, [] is shorcut to so this.
  		$this->questionaire[$weight] = array(
  			'qid' => $qid, //key
@@ -41,14 +42,14 @@ class Madlib {
       }
     }
  	}
-
- 	public function getListing() {
-    return $this->listing;
- 	}
-
   public function getQuestions() {
     return $this->questionaire;
   }
+
+  public function getListing() {
+    return $this->listing;
+  }
+
 
 }
 ?>

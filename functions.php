@@ -1,6 +1,15 @@
 <!-- a. ENTERING NAME, -->
-	<!-- a.1 on submit, randomly select which madlib to generate 1, 2, or 3 -->
-	<!-- a.2 get questions -->
+
+<?php>
+function playerName() {
+	
+}
+
+
+
+?>
+<!-- a.1 on submit, randomly select which madlib to generate 1, 2, or 3 -->
+<!-- a.2 get questions -->
 
 <!-- FORM VALIDATION -->
 
