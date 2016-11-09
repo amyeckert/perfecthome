@@ -4,8 +4,7 @@ require __DIR__.'/functions.php';
 
 
 $Greeting = 'Find Your Your Perfect Home!';
-
-
+$playerName = $_POST['firstName'];
 ?>
 <head>
 	
@@ -19,23 +18,24 @@ $Greeting = 'Find Your Your Perfect Home!';
 
 </head>
 
+<pre>
+<?php var_dump($_POST); ?>
+<?php var_dump($playerName); ?>
+</pre>
+
 <body id="start">
 	<div id="container">
 		<h1 class="message"><?php echo $greeting ?></h1>
 
 		<div class="enter-name">
-			<form id="name" name="name" action="perfecthome.php" method="post">
+			<form id="name" name="name" action="/index.php" method="POST">
 
 				<label class="name" for="firstName">Hi! What is your first name?</label>
-
-				<input id="firstName" class="firstName" name="firstName" type="text" data-parsley-error-message="Go ahead and make one up!" aria-required="true" required autofocus>
+				<input id="firstName" class="firstName" name="firstName" type="text" aria-required="true" required autofocus>
 				
-				<input id="btn-name" type="submit" class="btn" value="Let's go!">
-
+				<button id="btn-name" type="submit" class="btn" value="Let's go!"><span>Let's go!</span></button>
 			</form>
-		
 		</div>
-
 	</div>
 
 	<!--	JQUERY, etc. -->
