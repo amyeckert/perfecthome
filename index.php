@@ -1,52 +1,68 @@
 
 <?php
-require __DIR__.'/functions.php';
+require __DIR__.'/lib/functions.php';
 
 
-$Greeting = 'Find Your Your Perfect Home!';
+$greeting = 'Find Your Your Perfect Home!';
+$playerName = NULL;
 $playerName = $_POST['firstName'];
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $isValid = TRUE;
+    // print '<pre>';
+    // print_r($_POST['firstName']);
+    // // print $playerName;
+    // print '</pre>';
+
+ //    foreach ($_POST as $key => $value) {
+
+ //        if (empty($value)) {
+ //            $isValid = FALSE;
+ //            echo $requiredErr;
+ //        } 
+
+ //        else {
+ //            switch ($key) {
+
+ //            case 'name':
+ //                if (test_text($value) == FALSE) {
+ //                    $isValid = FALSE;
+ //                    echo $charErr;  // failed test
+ //                } 
+ //                else {              //passed test
+ //                    clean_text($value);
+ //                    $isValid = TRUE;
+
+ //                }
+ //                $name = $value;
+ //                break; 
+	// 		} 
+	// 	}
+	// }
+};
+
 ?>
-<head>
-	
-	<title>Find Your Your Perfect Home!</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- 	FONTS -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<!-- 	STYLES -->
-	<link rel="stylesheet" type="text/css" href="_css/perfecthome.css"/>
 
-</head>
+<!-- <pre> -->
+<!-- <?php //var_dump($_POST); ?> -->
+<!-- <?php //var_dump($playerName); ?> -->
+<!-- </pre> -->
 
-<pre>
-<?php var_dump($_POST); ?>
-<?php var_dump($playerName); ?>
-</pre>
+<?php require 'layout/header.php'; ?>
 
-<body id="start">
 	<div id="container">
 		<h1 class="message"><?php echo $greeting ?></h1>
 
 		<div class="enter-name">
-			<form id="name" name="name" action="/index.php" method="POST">
+			<form id="player_name" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-				<label class="name" for="firstName">Hi! What is your first name?</label>
+				<label class="name" for="firstName">What is your first name?</label>
 				<input id="firstName" class="firstName" name="firstName" type="text" aria-required="true" required autofocus>
 				
 				<button id="btn-name" type="submit" class="btn" value="Let's go!"><span>Let's go!</span></button>
 			</form>
 		</div>
+		<div><p><span class="firstName"> <?php echo $_POST['firstName'];?></span>, this is something really special!</p></div>
 	</div>
 
-	<!--	JQUERY, etc. -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="_js/bootstrap.min.js"></script> -->
-
-	<!-- 	FORM VALIDATION -->
-	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.4.3/parsley.js"></script> -->
-<!--	CUSTOM JS -->
-	<!-- <script src="_js/perfecthome.js"></script> -->
-
-
-</body>
-</html>
+<!-- <?php //require 'layout/footer.php'; ?> -->

@@ -1,4 +1,15 @@
+
+<?php 
+require __DIR__.'lib/functions.php';
+
+
+?>
+
+
+
+
 		<!-- QESTIONS FOR LISTING 1 -->
+
 		<div class="q1">
 
 			<form id="questions1" name="questions1">
