@@ -19,16 +19,18 @@ function get_connection() {
 
 function getPlayerName () {
 	$pdo = get_connection(); //calls the function above to get the new pdo to store in $pdo variable.
-	    $query = 'SELECT * FROM name';
+    $query = 'SELECT * FROM name';
     if($limit) {
         $query = $query. ' LIMIT :resultLimit';
     }
     $stmt = $pdo->prepare($query);
     $stmt->bindParam('resultLimit', $limit, PDO::PARAM_INT);
     $stmt->execute();
-    $pets = $stmt->fetchAll();
+    $firstName = $stmt->fetchAll();
 
-    return $pets;
+    return $firstName;
+
+    
 }
 
 //a.2 get/print questions/questionaire 

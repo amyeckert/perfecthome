@@ -1,5 +1,13 @@
 
 <?php
+// $pdo = new PDO('mysql: dbname=perfecthome', 'root', null);
+// var_dump($pdo);die;
+
+// $result = $pdo->query('SELECT * FROM name');
+// $rows = $result->fetchAll();
+
+
+
 require __DIR__.'/lib/functions.php';
 
 
@@ -9,6 +17,11 @@ $playerName = $_POST['firstName'];
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $isValid = TRUE;
+
+
+
+
+
     // print '<pre>';
     // print_r($_POST['firstName']);
     // // print $playerName;
@@ -41,12 +54,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// }
 };
 
+
+
+
 ?>
 
-<!-- <pre> -->
-<!-- <?php //var_dump($_POST); ?> -->
-<!-- <?php //var_dump($playerName); ?> -->
-<!-- </pre> -->
+<!-- <pre> 
+<?php var_dump($_POST); ?> 
+<?php var_dump($playerName); ?>
+</pre> -->
 
 <?php require 'layout/header.php'; ?>
 
@@ -62,7 +78,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 				<button id="btn-name" type="submit" class="btn" value="Let's go!"><span>Let's go!</span></button>
 			</form>
 		</div>
-		<div><p><span class="firstName"> <?php echo $_POST['firstName'];?></span>, this is something really special!</p></div>
+		<!-- // <div><p><span class="firstName"> <?php echo $_POST['firstName'];?></span>, this is something really special!</p></div> -->
+
 	</div>
 
-<!-- <?php //require 'layout/footer.php'; ?> -->
+<?php //require 'layout/footer.php'; ?> 
