@@ -17,7 +17,7 @@ function get_connection() {
     return $pdo;    
 }
 
-function getPlayerName () {
+function getPlayerName() {
 	$pdo = get_connection(); //calls the function above to get the new pdo to store in $pdo variable.
     $query = 'SELECT * FROM name';
     if($limit) {
@@ -26,11 +26,9 @@ function getPlayerName () {
     $stmt = $pdo->prepare($query);
     $stmt->bindParam('resultLimit', $limit, PDO::PARAM_INT);
     $stmt->execute();
-    $firstName = $stmt->fetchAll();
+    $playerName = $stmt->fetchAll();
 
-    return $firstName;
-
-    
+    return $playerName;  
 }
 
 //a.2 get/print questions/questionaire 
@@ -68,10 +66,14 @@ function test_number($number_data) {
 }  
 
 
+//<!-- SAVE TO DB -->
+
+function save_player_names($nameToSave) {
+    var_dump($nameToSave); 
+
+}
+
 ?>
-<!-- SAVE TO DB -->
-
-
 <!-- Get answers and inject into LISTING, CORRECT GRAMMAR AND PUNCTUATION FOR INDIVIDUAL FIELDS 
 AS IN- A/AN AND APOSTROPHE'S ETC.  display listing  -->
 

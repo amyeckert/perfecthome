@@ -1,31 +1,37 @@
 
 <?php
-// $pdo = new PDO('mysql: dbname=perfecthome', 'root', null);
-// var_dump($pdo);die;
-
-// $result = $pdo->query('SELECT * FROM name');
-// $rows = $result->fetchAll();
-
-
-
 require __DIR__.'/lib/functions.php';
+
+$pdo = new PDO('mysql: dbname=perfecthome', 'root', null);
+
+$result = $pdo->query('SELECT * FROM name');
+$rows = $result->fetchAll();
+var_dump($rows);
+
 
 
 $greeting = 'Find Your Your Perfect Home!';
 $playerName = NULL;
-$playerName = $_POST['firstName'];
+$playerName = $_POST['playerName'];
+$errorRequired = 'This field is required';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $isValid = TRUE;
+    // $isValid = TRUE;
+    $players = getPlayerName();
+    $newPlayer = array(
+    	'playerName' => $playerName,
+	);
+	$players[] = $newPlayer;
+	save_player_names($players);
+}
+
+if ($isValid) {
+
+	// header('Location: /questionaire1.php');
+}
 
 
 
-
-
-    // print '<pre>';
-    // print_r($_POST['firstName']);
-    // // print $playerName;
-    // print '</pre>';
 
  //    foreach ($_POST as $key => $value) {
 
@@ -52,34 +58,35 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// 		} 
 	// 	}
 	// }
+
+if (isset($_POST['playerName'])) {
+    $playerName = $_POST['playerName'];
+} else {
+    $playername = $errorRequired;
+    // $playerName = 'FOO';
 };
-
-
-
 
 ?>
 
-<!-- <pre> 
+<pre> 
 <?php var_dump($_POST); ?> 
-<?php var_dump($playerName); ?>
-</pre> -->
+<?php var_dump($players); ?>
+</pre> 
 
 <?php require 'layout/header.php'; ?>
 
-	<div id="container">
-		<h1 class="message"><?php echo $greeting ?></h1>
+<div id='container'>
+	<h1 class='message'><?php echo $greeting ?></h1>
 
-		<div class="enter-name">
-			<form id="player_name" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+	<div class='enter-name'>
+		<form id="player_name" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-				<label class="name" for="firstName">What is your first name?</label>
-				<input id="firstName" class="firstName" name="firstName" type="text" aria-required="true" required autofocus>
-				
-				<button id="btn-name" type="submit" class="btn" value="Let's go!"><span>Let's go!</span></button>
-			</form>
-		</div>
-		<!-- // <div><p><span class="firstName"> <?php echo $_POST['firstName'];?></span>, this is something really special!</p></div> -->
-
+			<label class="name" for="playerName">What is your first name?</label>
+			<input id="firstName" class="playerName" name="playerName" type="text" required autofocus>
+			
+			<button id="btn-name" type="submit" class="btn" value="Let's go!"><span>Let's go!</span></button>
+		</form>
 	</div>
+</div>
+<!-- <?php //var_dump($_SERVER);die; ?> -->
 
-<?php //require 'layout/footer.php'; ?> 

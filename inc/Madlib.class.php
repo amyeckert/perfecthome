@@ -7,7 +7,7 @@ session_start();
 class Madlib {
   //main components of all Madlibs:
 	public $id = ''; 
-	public $questionaire = array ();
+	public $questionaire = array();
   public $listing = ''; 
 
   //build it:
@@ -48,6 +48,7 @@ class Madlib {
 
   public function getListing() {
     return $this->listing;
+    //each listing has a different background image! Refer to the js. 
   }
 
 

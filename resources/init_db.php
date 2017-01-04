@@ -60,22 +60,42 @@ $pdo->exec('CREATE TABLE `madlib1` (
 $pdo->exec('DROP TABLE IF EXISTS madlib2;');
 
 $pdo->exec('CREATE TABLE `madlib2` (
-	 `id` int(11) NOT NULL AUTO_INCREMENT,
-	 
-	 
-	 PRIMARY KEY (`id`)
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`num5` int(100) NOT NULL,
+	`adj3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+	`num2` int(100) NOT NULL,
+	`num3` int(100) NOT NULL,
+	`num4` int(100) NOT NULL,
+	`emotion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+	`direction` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+	`room` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+	`adj4` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+	`pubInst` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+	`favCity` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+	`landmark` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
-// *************************************** 
 // *********mad lib questionaire 3 *******
-// ***************************************
 
 $pdo->exec('DROP TABLE IF EXISTS madlib3;');
 
 $pdo->exec('CREATE TABLE `madlib3` (
-	 `id` int(11) NOT NULL AUTO_INCREMENT,
-	
- PRIMARY KEY (`id`)
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`num6` int(100) NOT NULL,
+	`num7` int(100) NOT NULL,
+	`disaster` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	`clothing` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	`mood` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	`adj6` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	`urban` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	`verb2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	`time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	`pluAnimals` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	`room2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	`adj7` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 
+	`verb3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL, 	
+	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
 echo 'Ding!';
