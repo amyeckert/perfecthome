@@ -1,7 +1,7 @@
 		<!-- QESTIONS FOR LISTING 2 -->
-		<div class="q2">
+		<div id="container" class="q2">
 
-			<form id="questions2" name="questions2">
+			<form id="questions2" name="questions2" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
 				<label for="num5">Enter a number from 1 - 10.</label><br>
 				<input id="num5" class="form-control num5" name="num5" type="number" data-parsley-type="number" data-parsley-range="[0, 10]" placeholder="#" data-parsley-error-message="That's not between 0 and 10." aria-required="true" required>

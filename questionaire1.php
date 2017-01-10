@@ -1,10 +1,10 @@
-
 <?php 
-require __DIR__.'lib/functions.php';
+require __DIR__.'/lib/functions.php';
 $pdo = get_connection();
 
 //set page variables to NULL
-$adj1 = $favCountry = $bestie $adj2 = $noun1 = $noun2 = $favCartoon = $prez = $gem = $basement = $tree = $artist = $water $num1 = $favAnimal = $verb1 = "";
+$adj1 = $favCountry = $bestie = $adj2 = $noun1 = $noun2 = $favCartoon = $prez = $gem = $basement = $tree = $artist = $water = $num1 = $favAnimal = $verb1 = NULL;
+
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {	
 	$isValid = TRUE;
@@ -15,43 +15,63 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         else {
             switch ($key) {
-            case 'playerName':
+            case 'adj1':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;  // failed test
-                } 
-                else {              //passed test
+                    echo $charErr;
+                } else {              
                     clean_text($value);
                     $isValid = TRUE;
                 }
-                $name = $value; //$name variable contains the value of $_POST['playerName'];
+                $adj1 = $value; //$name variable contains the value of $_POST['playerName'];
                 break; 
+
+            case 'favCountry':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $favCountry = $value; //$name variable contains the value of $_POST['playerName'];
+                break;
             }
 		}
 	}	
 }
+//********* save answers to db 
+if ($isValid == TRUE) {
+	$answers1 = array();//create an array of the answers to madlib1
+	$newAnswer = array(
+		'adj1' => $adj1,
+		'favCountry' => $favCountry,
+		// 'bestie'=> $bestie,
 
-
-
-
-
-
-?>
-<?php require 'layout/header.php'; ?>
+	);
+	$answers1[] = $newAnswer;
+	var_dump($_POST);
+	save_answers1($newAnswer);
+	// header('Location: /listing.php'); 
+} else {
+	// header('Location: /questionaire1.php');
+// 	// die;
+}
+require 'layout/header.php'; ?>
+<pre><?php var_dump($_POST); ?></pre>
 
 	<!-- QESTIONS FOR LISTING 1 -->
+	<div id="container" class="q1">
 
-	<div class="q1">
-
-		<form id="questions1" name="questions1" action="/listing.php" method="POST">
+		<form id="questions1" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 				
 			<label for="adj1">Enter an adjective.</label>
-			<input id="adj1" class="form-control adj1" name="adj1" type="text" placeholder="Adjective..." data-parsley-error-message="Give your noun a little attitude!" aria-required="true" required>
+			<input id="adj1" class="form-control adj1" name="adj1" type="text" placeholder="Adjective..." data-parsley-error-message="Give your noun a little attitude!" aria-required="true">
 
 			<label for="favCounty">What is your favorite country?</label>
-			<input id="favCountry" class="form-control favCountry" name="favCountry" type="text" placeholder="New Zealand? Namibia?" data-parsley-error-message="There are currently 195 countries to choose from!" aria-required="true" required>
+			<input id="favCountry" class="form-control favCountry" name="favCountry" type="text" placeholder="New Zealand? Namibia?" data-parsley-error-message="There are currently 195 countries to choose from!" aria-required="true">
 
-			<label for="bestie">What is the first name of your best friend?</label>
+			<!--<label for="bestie">What is the first name of your best friend?</label>
 			<input id="bestie" class="form-control bestie" name="bestie" type="text" placeholder="My bestie is..." data-parsley-error-message="Is your best friend invisible?" aria-required="true" required>
 
 			<label for="adj2">Enter another adjective.</label>
@@ -91,7 +111,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<input id="favAnimal" class="form-control favAnimal" name="favAnimal" type="text" placeholder="Pig? Python? Pyrhana?"  data-parsley-error-message="Ok, or pick your spirit animal." aria-required="true" required>
 
 			<label for="verb1">Enter a verb.</label>
-			<input id="verb1" class="form-control verb1" name="verb1" type="text" placeholder="Action!" data-parsley-error-message="An action, an occurrence, or a state of being..." aria-required="true" required>
+			<input id="verb1" class="form-control verb1" name="verb1" type="text" placeholder="Action!" data-parsley-error-message="An action, an occurrence, or a state of being..." aria-required="true" required> -->
 
 			<input id="btn-submit1" type="submit" value="Call the movers!">
 		</form>	

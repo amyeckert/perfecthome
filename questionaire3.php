@@ -1,6 +1,6 @@
 		<!-- QESTIONS FOR LISTING 3 -->
-		<div class="q3">
-			<form id="questions3" name="questions3">
+		<div id="container" class="q3">
+			<form id="questions3" name="questions3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
 				<label for="num6">Enter a number from 1 - 5.</label><br>
 				<input id="num6" class="form-control num6" name="num6" type="number" data-parsley-range="[0, 5]"  placeholder="#" data-parsley-error-message="That ain't gonna work." aria-required="true" required>

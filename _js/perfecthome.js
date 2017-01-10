@@ -118,7 +118,7 @@ $("#btn-submit2").click(function(e) {
 	var landmark = $("#landmark :selected").text();
 	
 	$(".num5").empty().append($("input.num5").val());
-	    $(".adj3").empty().append($("input.adj3").val());
+	$(".adj3").empty().append($("input.adj3").val());
 	$(".num2").empty().append($("input.num2").val());
 	$(".num3").empty().append($("input.num3").val());
 	$(".num4").empty().append($("input.num4").val());

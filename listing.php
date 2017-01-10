@@ -1,27 +1,16 @@
-		
-<!-- Load Facebook SDK for JavaScript -->
-<!-- <div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
-	  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script> -->
 <?php   
 require 'lib/functions.php';
-
+$currentPlayer = getPlayerName();
 ?>
 
 <?php require 'layout/header.php'; ?> 
 
 		<!-- LISTINGS -->
-		<div class="listings">
+		<div id="container" class="listings">
 
 			<div id="list1">
 
-		 		<p><span class="firstName"> <?php echo $_POST['firstName'];?></span>, this is something really special! <!-- Inspired by the <span class="adj1"></span> chateaus of <span class="favCountry"></span>, Chateau <span class="bestie"></span> is a<span class="addN"></span>(n) <span class="adj2"></span> and luxurious retreat that reflects that magical merging of <span class="noun1"></span>  and <span class="noun2"></span>. Created by renowned architect <span class="favCartoon"></span> and <span class="prez"></span> Builders, the estate is a masterpiece of design and craftsmanship featuring inlaid <span class="gem"></span>, hand-planed <span class="tree"></span> flooring, intricately hand-painted <span class="basement"></span>, hand-carved fireplaces by <span class="artist"></span>, plus an elevator to transport from floor to floor. Luxuriate in sprawling entertaining spaces that flow outside to the stunning infinity pool, tennis courts and tranquil <span class="water"></span> beyond. Enjoy private access to your own elegantly situated <span class="num1"></span> acre mini-estate. Chateau <span class="bestie"></span> is the crème de la crème in prestigious <span class="favAnimal"></span> <span class="verb1"></span> Ranch. --></p>
+		 		<p><span class="firstName"> <?php echo $currentPlayer;?></span>, this is something really special! <!-- Inspired by the <span class="adj1"></span> chateaus of <span class="favCountry"></span>, Chateau <span class="bestie"></span> is a<span class="addN"></span>(n) <span class="adj2"></span> and luxurious retreat that reflects that magical merging of <span class="noun1"></span>  and <span class="noun2"></span>. Created by renowned architect <span class="favCartoon"></span> and <span class="prez"></span> Builders, the estate is a masterpiece of design and craftsmanship featuring inlaid <span class="gem"></span>, hand-planed <span class="tree"></span> flooring, intricately hand-painted <span class="basement"></span>, hand-carved fireplaces by <span class="artist"></span>, plus an elevator to transport from floor to floor. Luxuriate in sprawling entertaining spaces that flow outside to the stunning infinity pool, tennis courts and tranquil <span class="water"></span> beyond. Enjoy private access to your own elegantly situated <span class="num1"></span> acre mini-estate. Chateau <span class="bestie"></span> is the crème de la crème in prestigious <span class="favAnimal"></span> <span class="verb1"></span> Ranch. --></p>
 		 		
 		 	</div>
 

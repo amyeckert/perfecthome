@@ -11,9 +11,8 @@ function get_connection() {
     return $pdo;    
 }
 
-//**********************************************
+
 //*********** FORM VALIDATION ******************
-//**********************************************
 
 //error messages
 $requiredErr = 'This field is required</br>';
@@ -28,7 +27,7 @@ function clean_text($text_data) {
     return $text_data;
 }
 
-//check if it only contains letters and whitespace
+//********check that it only contains letters and whitespace
 function test_text($text_data) {
     if (!preg_match("/^[a-zA-Z ]*$/",$text_data)) {
         return FALSE; 
@@ -36,47 +35,16 @@ function test_text($text_data) {
     return TRUE; 
 }
 
-//check if a number was entered in a number field
+//**********check if a number was entered in a number field
 function test_number($number_data) {
     if (!is_numeric($number_data)) {
         return FALSE;
     }
     return TRUE;    
 }
-
-// function validate_inputs() {
-
-//     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-//         $isValid = TRUE;
-//         foreach ($_POST as $key => $value) {
-//             if (empty($value)) {
-//                 $isValid = FALSE;
-//                 echo $requiredErr;
-//             }
-//             else {
-//                 switch ($key) {
-//                 case 'playerName':
-//                     if (test_text($value) == FALSE) {
-//                         $isValid = FALSE;
-//                         echo $charErr;  // failed test
-//                     } else {              //passed test
-//                         clean_text($value);
-//                         $isValid = TRUE;
-//                     }
-//                     $name = $value; //The $name variable contains the value of $_POST['playerName'];
-//                     break; 
-//                 }
-//             }
-//         }   
-//     }
-//     return $isValid;
-// }
-
-//store current player's name in DB as $playerName  
-
+//*********save player name to db 
 function savePlayer($playersToSave) {
     $pdo = get_connection();
-    $isValid = TRUE;
     $name = $_POST['playerName'];
 
     //write the sql query:
@@ -87,7 +55,8 @@ function savePlayer($playersToSave) {
     $stmt->bindParam(':playername', $name);
     $stmt->execute();
 
-    // ************** SAVE DON'T DELETE ****************
+
+    // ************** DON'T DELETE ****************
     // foreach($playersToSave as $player) {
     //     $name = array();
     //     $cols = array();
@@ -101,19 +70,55 @@ function savePlayer($playersToSave) {
     //     // $stmt->bindParam(':playerName', $player);
     //     $stmt->execute();
 
-    echo "New records created successfully";
+    // echo "New records created successfully";
     // var_dump($name);
  
     //if using json...
     // $json = json_encode($players, JSON_PRETTY_PRINT);
     // file_put_contents('data/players.json', $json);
     // *************************************************
-}    
+}  
+
+function save_answers1($answersToSave)  {
+    $pdo = get_connection();
+    $adj1 = $_POST['adj1'];
+    $favCountry = $_POST['favCountry'];
+
+    // sql query:
+    $sql = "INSERT INTO madlib1 (adj1, favCountry, bestie, adj2, noun1, noun2, favCartoon, prez, gem, basement, tree, artist, water, num1, favAnimal, verb1) VALUE (:adj1, :favCountry, :bestie, :adj2, :noun1, :noun2, :favCartoon, :prez, :gem, :basement, :tree, :artist, :water, :num1, :favAnimal, :verb1,)";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':adj1', $adj);
+    $stmt->bindParam(':favCountry', $favCountry);
+    $stmt->bindParam(':bestie', $bestie);
+    $stmt->bindParam(':adj2', $adj2);
+    $stmt->bindParam(':noun1', $noun1);
+    $stmt->bindParam(':noun2', $noun2);
+    $stmt->bindParam(':favCartoon', $favCartoon);
+    $stmt->bindParam(':prez', $prez);
+    $stmt->bindParam(':gem', $gem);
+    $stmt->bindParam(':basement', $basement);
+    $stmt->bindParam(':tree', $tree);
+    $stmt->bindParam(':artist', $artist);
+    $stmt->bindParam(':water', $water);
+    $stmt->bindParam(':num1', $num1);
+    $stmt->bindParam(':favAnimal', $favAnimal);
+    $stmt->bindParam(':verb1', $verb1);
+
+    $stmt->execute(); 
+    echo "New records created successfully";
+
+
+
+
+
+
+}
 
 
 function getPlayerName() {
-    $pdo = get_connection(); //calls the function above to get the new pdo to store in $pdo variable.
-    $query = 'SELECT * FROM players';
+    $pdo = get_connection(); 
+    $query = 'SELECT * FROM players'; //get current player name 
     if($limit) {
         $query = $query. ' LIMIT :resultLimit';
     }
@@ -124,29 +129,4 @@ function getPlayerName() {
 
     return $playerName;  
 }
-
-//a.2 get/print questions/questionaire 
-
-
-  
-
-
-
-//randomly select which madlib to display 1, 2, or 3 
 ?>
-
-
-<!-- Get answers and inject into LISTING, CORRECT GRAMMAR AND PUNCTUATION FOR INDIVIDUAL FIELDS 
-AS IN- A/AN AND APOSTROPHE'S ETC.  display listing  -->
-
-<!-- SAVE INDIVIDUAL RESULTS LISTING FOR SOCIAL SHARING -->
-
-<!-- reset page/form -->
-
-
-<!-- <?php
-
-// require_once __DIR__.'/lib/Madlib.class.php';
-
-?> -->
-

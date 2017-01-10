@@ -1,13 +1,10 @@
-<?php 
-	require __DIR__.'/lib/functions.php';
-	$pdo = get_connection();
-?>
 <?php
+require __DIR__.'/lib/functions.php';
+$pdo = get_connection();
 
 //set page variables to NULL
 $playerName = NULL;
 $greeting = "Find Your Perfect Home!";
-
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {	
 	$isValid = TRUE;
@@ -26,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     clean_text($value);
                     $isValid = TRUE;
                 }
-                $name = $value; //$name variable contains the value of $_POST['playerName'];
+                $playerName = $value; //$name variable contains the value of $_POST['playerName'];
                 break; 
             }
 		}
@@ -36,28 +33,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 if ($isValid == TRUE) {
 	$players = array();//create an array of players
 	$newPlayer = array(
-		'playerName' => $playerName, // where $name is the value entered in the form field, etc.
+		'playerName' => $playerName, // where $playerName is the value entered in the form field, etc.
 	);
 	$players[] = $newPlayer;
 	savePlayer($newPlayer);
-	// header('Location: /questionaire1.php'); // this is where I'd need a random chooser function call. 
+	header('Location: /questionaire1.php');
+	exit; // this is where I'd need a random chooser function call. 
 } else {
 	// header('Location: /index.php');
-	// die;
+	// exit;
 }
-
-?>
-<pre>
-<?php //var_dump($name); ?> 
-<?php //var_dump($players); ?>
-<?php //var_dump($_SERVER); ?>
-</pre> 
-
+ require 'layout/header.php'; ?>
 <!--****************************************
 *********  HTML PART OF THE PAGE ***********
 *****************************************-->
-<?php require 'layout/header.php'; ?>
-
 <div id='container'>
 	<h1 class='message'><?php echo $greeting ?></h1>
 
