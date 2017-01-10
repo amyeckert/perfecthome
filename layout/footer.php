@@ -21,8 +21,8 @@ require on any new page that needs this footer.
 
 <!--	JQUERY, etc. -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="_js/bootstrap.min.js"></script> -->
-
+<script src="_js/bootstrap.min.js"></script> 
+ -->
 <!-- 	FORM VALIDATION -->
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.4.3/parsley.js"></script> -->
 <!--	CUSTOM JS -->

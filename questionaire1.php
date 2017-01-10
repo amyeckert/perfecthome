@@ -1,9 +1,44 @@
 
 <?php 
 require __DIR__.'lib/functions.php';
-require 'layout/header.php'; 
+$pdo = get_connection();
+
+//set page variables to NULL
+$adj1 = $favCountry = $bestie $adj2 = $noun1 = $noun2 = $favCartoon = $prez = $gem = $basement = $tree = $artist = $water $num1 = $favAnimal = $verb1 = "";
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {	
+	$isValid = TRUE;
+    foreach ($_POST as $key => $value) {
+        if (empty($value)) {
+            $isValid = FALSE;
+            echo $requiredErr;
+        }
+        else {
+            switch ($key) {
+            case 'playerName':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;  // failed test
+                } 
+                else {              //passed test
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $name = $value; //$name variable contains the value of $_POST['playerName'];
+                break; 
+            }
+		}
+	}	
+}
+
+
+
+
+
+
 ?>
-		
+<?php require 'layout/header.php'; ?>
+
 	<!-- QESTIONS FOR LISTING 1 -->
 
 	<div class="q1">
