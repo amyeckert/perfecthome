@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     clean_text($value);
                     $isValid = TRUE;
                 }
-                $playerName = $value; //$name variable contains the value of $_POST['playerName'];
+                $playerName = $value; 
                 break; 
             }
 		}
@@ -33,17 +33,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 if ($isValid == TRUE) {
 	$players = array();//create an array of players
 	$newPlayer = array(
-		'playerName' => $playerName, // where $playerName is the value entered in the form field, etc.
+		'playerName' => $playerName, 
 	);
 	$players[] = $newPlayer;
 	savePlayer($newPlayer);
+	// this is where I need a random chooser function call. 
 	header('Location: /questionaire1.php');
-	exit; // this is where I'd need a random chooser function call. 
+	exit; 
 } else {
 	// header('Location: /index.php');
 	// exit;
 }
- require 'layout/header.php'; ?>
+require 'layout/header.php'; 
+?>
 <!--****************************************
 *********  HTML PART OF THE PAGE ***********
 *****************************************-->
