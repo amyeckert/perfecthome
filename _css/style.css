@@ -62,7 +62,7 @@ a:hover {
 	box-shadow: none;
 	outline: 1px solid rgba(255,155,68,1);
 }
-#container {
+.container {
 	display: block;
 	margin: 0 auto;
 	padding: 30px 30px;
@@ -173,10 +173,10 @@ input[type="text"].error {
 	display: block;
 }
 
-.listings {
+/*.listings {
 	display: block;
 	width: 100%
-} 
+}*/ 
 
 #list1, 
 #list2, 

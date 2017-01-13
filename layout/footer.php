@@ -7,7 +7,7 @@ require on any new page that needs this footer.
 
 <footer>
 
-	<button id="btn-reset" class="btn" type="submit">Still need to show your parents? Keep looking...</button>
+	<button id="btn-reset" class="btn" type="submit"><a href="/index.php">Still need to show your parents? Keep looking...</a></button>
 
 	<div class="share">
 		<div class="fb-share-button" data-href="http://www.perfecthomequiz.com" data-layout="button" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.perfecthomequiz.com%2F&amp;s
@@ -15,7 +15,7 @@ require on any new page that needs this footer.
 	</div>
 
 
-	<div class="eliza"><a href="http://eliza.liveinsouthjersey.com" target="_blank">Oh. You were looking for <em>actual</em> real estate listings?</a></div>
+	<div class="eliza"><a href="http://eliza.liveinsouthjersey.com" target="_blank">Oh. Looking for <em>actual</em> real estate listings?</a></div>
   
 </footer>
 

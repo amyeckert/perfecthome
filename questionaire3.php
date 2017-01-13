@@ -1,5 +1,5 @@
 		<!-- QESTIONS FOR LISTING 3 -->
-		<div id="container" class="q3">
+		<div class="container q3">
 			<form id="questions3" name="questions3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
 				<label for="num6">Enter a number from 1 - 5.</label><br>

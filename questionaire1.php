@@ -11,13 +11,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     foreach ($_POST as $key => $value) {
         if (empty($value)) {
             $isValid = FALSE;
-            echo $requiredErr;
-        } else { //this should be a foreach loop eventually. 
-            switch ($key) {
+            $erroMessage = $requiredErr;
+        } 
+        else {
+        switch ($key) {
             case 'adj1':
                 if (test_text($value) == FALSE) {
-                    $isValid = FALSE;
-                    echo $charErr;
+                    $isValid = FALSE; 
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -27,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'favCountry':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -37,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'bestie':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -47,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'favCountry':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -57,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'adj2':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;                
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -67,7 +68,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'noun1':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -77,7 +78,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'noun2':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -87,7 +88,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'favCartoon':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -97,7 +98,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'prez':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -107,7 +108,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'gem':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -117,7 +118,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'basement':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -127,7 +128,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'tree':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -137,7 +138,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'artist':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -147,7 +148,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'water':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -155,19 +156,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $water = $value; 
                 break;
             case 'num1':
-                if (test_number($value) == FALSE || ($value <= 0 || $value >= 100)) {
+                if (test_number($value) == FALSE) {
                     $isValid = FALSE;
-                	echo "Pick a number between 0 - 100. ";
+                	$errorMessage = "Pick a number between 0 - 100.";    
                 } else {
-                	test_number($value); 
-                	$isValid = TRUE;
+                    if ($value <= 0 || $value >= 100) {
+                	   $isValid = FALSE;
+                       $errorMessage = "Pick a number between 0 - 100.";
+                    } else {
+                        $isValid = TRUE;
+                    }
                 }
                 $num1 = $value; 
                 break;
             case 'favAnimal':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
@@ -177,17 +182,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             case 'verb1':
                 if (test_text($value) == FALSE) {
                     $isValid = FALSE;
-                    echo $charErr;
+                    $errorMessage = $charErr;
                 } else {              
                     clean_text($value);
                     $isValid = TRUE;
                 }
                 $verb1 = $value; 
                 break;
-            }
-		}
-	}	
-}
+                }
+    		}
+        }
+   }	
 //********* save answers to db 
 if ($isValid == TRUE) {
 	$answers1 = array();//create an array of the answers to madlib1
@@ -213,67 +218,79 @@ if ($isValid == TRUE) {
 	
 	save_answers1($newAnswer);
 	header('Location: /listing.php'); 
-} else {
-	// header('Location: /questionaire1.php');
-// 	// die;
 }
+
 require 'layout/header.php'; ?>
-<pre><?php //($newAnswer);//var_dump($_POST); ?></pre>
 
 	<!-- QESTIONS FOR LISTING 1 -->
-	<div id="container" class="q1">
+	<div class="container q1">
 
 		<form id="questions1" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 				
 			<label for="adj1">Enter an adjective.</label>
-			<input id="adj1" class="form-control adj1" name="adj1" type="text" placeholder="Adjective..." data-parsley-error-message="Give your noun a little attitude!" aria-required="true">
+			<input id="adj1" class="form-control adj1" name="adj1" type="text" placeholder="Adjective..." aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="favCounty">What is your favorite country?</label>
-			<input id="favCountry" class="form-control favCountry" name="favCountry" type="text" placeholder="New Zealand? Namibia?" data-parsley-error-message="There are currently 195 countries to choose from!" aria-required="true">
+			<input id="favCountry" class="form-control favCountry" name="favCountry" type="text" placeholder="New Zealand? Namibia?" aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="bestie">What is the first name of your best friend?</label>
-			<input id="bestie" class="form-control bestie" name="bestie" type="text" placeholder="My bestie is..." data-parsley-error-message="Is your best friend invisible?" aria-required="true" >
+			<input id="bestie" class="form-control bestie" name="bestie" type="text" placeholder="My bestie is..."aria-required="true" >
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="adj2">Enter another adjective.</label>
-			<input id="adj2" class="form-control adj2" name="adj2" type="text" placeholder="Another adjective..."data-parsley-error-message="Give your noun a little attitude!" aria-required="true">
+			<input id="adj2" class="form-control adj2" name="adj2" type="text" placeholder="Another adjective..."aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="noun1">Enter an noun.</label>
-			<input id="noun1" class="form-control noun1" name="noun1" type="text" placeholder="A person, place, or thing..." data-parsley-error-message="A person, place, or thing..." aria-required="true">
+			<input id="noun1" class="form-control noun1" name="noun1" type="text" placeholder="A person, place, or thing..." aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="noun2">Enter another noun.</label>
-			<input id="noun2" class="form-control noun2" name="noun2" type="text" placeholder="Another person, place, or thing..." data-parsley-error-message="You missed this one..." aria-required="true">
+			<input id="noun2" class="form-control noun2" name="noun2" type="text" placeholder="Another person, place, or thing..." aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="favCartoon">What is the name of your favorite cartoon character?</label>
-			<input id="favCartoon" class="form-control favCartoon" name="favCartoon" type="text" placeholder="Tigger? Shrek? Peppa Pig?" data-parsley-error-message="You missed this one..." aria-required="true">
+			<input id="favCartoon" class="form-control favCartoon" name="favCartoon" type="text" placeholder="Tigger? Shrek? Peppa Pig?" aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="prez">Enter the name of any US President.</label>
-			<input id="prez" class="form-control prez" name="prez" type="text" placeholder="Barack Obama? Millard Fillmore? "data-parsley-error-message="POTUS!" aria-required="true">
+			<input id="prez" class="form-control prez" name="prez" type="text" placeholder="Barack Obama? Millard Fillmore?"aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
-			<label for="gem">Enter the name of a precious gem or stone.</label>
-			<input id="gem" class="form-control gem" name="gem" type="text" placeholder="Ruby? Istrian Marble?" data-parsley-error-message="Bling!" aria-required="true">
+			<label for="gem">Enter a type of stone or metal.</label>
+			<input id="gem" class="form-control gem" name="gem" type="text" placeholder="Ruby? Aluminum?" aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="basement">What's something you'd find in a basement?</label>
-			<input id="basement" class="form-control basement" name="basement" type="text" placeholder="Furnace? Mold? Broken toys?"  data-parsley-error-message="I wouldn't go down there..." aria-required="true">
+			<input id="basement" class="form-control basement" name="basement" type="text" placeholder="Furnace? Mold? Broken toys?" aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="tree">What is your favorite tree?</label>
-			<input id="tree" class="form-control tree" name="tree" type="text" placeholder="Mulberry? Dogwood? " data-parsley-error-message="There are approximately 600 extant species of genus Quercus (/ˈkwɜːrkəs/; Latin: oak tree)" aria-required="true">
+			<input id="tree" class="form-control tree" name="tree" type="text" placeholder="Mulberry? Dogwood? "aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="artist">Who is your favorite artist?</label>
-			<input id="artist" class="form-control artist" name="artist" type="text" placeholder="Prince? Caravaggio?"  data-parsley-error-message="I wouldn't know who to pick either..." aria-required="true">
+			<input id="artist" class="form-control artist" name="artist" type="text" placeholder="Prince? Caravaggio?" aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="water">Name any body of water.</label>
-			<input id="water" class="form-control water" name="water" type="text" placeholder="Lake Como? Gowanus Canal? "   data-parsley-error-message="Splash!" aria-required="true">
+			<input id="water" class="form-control water" name="water" type="text" placeholder="Lake Como? Gowanus Canal? " aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="num1">Enter a number from 0 - 100.</label><br>
-			<input id="num1" class="form-control num1" name="num1" type="number" data-parsley-range="[0, 100]" placeholder="#"  data-parsley-error-message="Oops, try that again!" aria-required="true">
+			<input id="num1" class="form-control num1" name="num1" type="number" data-parsley-range="[0, 100]" placeholder="#0 - 100" aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="favAnimal">What is your favorite animal?</label>
-			<input id="favAnimal" class="form-control favAnimal" name="favAnimal" type="text" placeholder="Pig? Python? Pyrhana?"  data-parsley-error-message="Ok, or pick your spirit animal." aria-required="true">
+			<input id="favAnimal" class="form-control favAnimal" name="favAnimal" type="text" placeholder="Pig? Python? Pyrhana?" aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span>
 
 			<label for="verb1">Enter a verb.</label>
-			<input id="verb1" class="form-control verb1" name="verb1" type="text" placeholder="Action!" data-parsley-error-message="An action, an occurrence, or a state of being..." aria-required="true"> 
+			<input id="verb1" class="form-control verb1" name="verb1" type="text" placeholder="Action!" aria-required="true">
+            <span class="error"><?php echo $errorMessage;?></span> 
 
 			<input id="btn-submit1" type="submit" value="Call the movers!">
 		</form>	
-		
-	</div>
+	</div>	

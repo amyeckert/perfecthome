@@ -1,18 +1,18 @@
 <?php   
 require 'lib/functions.php';
 $currentPlayer = getCurrentPlayer();
-// $answers = getAnswers();
-var_dump($currentPlayer);
+$answers = get_answers1();
+// var_dump($answers);
 ?>
 
 <?php require 'layout/header.php'; ?> 
 
 		<!-- LISTINGS -->
-		<div id="container" class="listings">
+		<div class="container">
 
 			<div id="list1">
 
-		 		<p><span class="firstName"> <?php echo $currentPlayer['playername'];?></span>, this is something really special! <!-- Inspired by the <span class="adj1"></span> chateaus of <span class="favCountry"></span>, Chateau <span class="bestie"></span> is a<span class="addN"></span>(n) <span class="adj2"></span> and luxurious retreat that reflects that magical merging of <span class="noun1"></span>  and <span class="noun2"></span>. Created by renowned architect <span class="favCartoon"></span> and <span class="prez"></span> Builders, the estate is a masterpiece of design and craftsmanship featuring inlaid <span class="gem"></span>, hand-planed <span class="tree"></span> flooring, intricately hand-painted <span class="basement"></span>, hand-carved fireplaces by <span class="artist"></span>, plus an elevator to transport from floor to floor. Luxuriate in sprawling entertaining spaces that flow outside to the stunning infinity pool, tennis courts and tranquil <span class="water"></span> beyond. Enjoy private access to your own elegantly situated <span class="num1"></span> acre mini-estate. Chateau <span class="bestie"></span> is the crème de la crème in prestigious <span class="favAnimal"></span> <span class="verb1"></span> Ranch. --></p>
+		 		<p><span class="firstName"><?php echo $currentPlayer['playername'];?></span>, this is something really special! Inspired by the <span class="adj1"><?php echo $answers['adj1'];?></span> chateaus of <span class="favCountry"><?php echo $answers['favCountry'];?></span>, Chateau <span class="bestie"><?php echo $answers['bestie'];?></span> is a(n) <span class="addN"><?php echo $answers['adj2'];?></span><span class="adj2"></span> and luxurious retreat that reflects that magical merging of <span class="noun1"><?php echo $answers['noun1'];?></span>  and <span class="noun2"><?php echo $answers['noun2'];?></span>. Created by renowned architect <span class="favCartoon"><?php echo $answers['favCartoon'];?></span> with <span class="prez"><?php echo $answers['prez'];?></span> Builders, the estate is a masterpiece of design and craftsmanship featuring inlaid <span class="gem"><?php echo $answers['gem'];?></span>, hand-planed <span class="tree"><?php echo $answers['tree'];?></span> flooring, intricately hand-painted <span class="basement"><?php echo $answers['basement'];?></span>, hand-carved fireplaces by <span class="artist"><?php echo $answers['artist'];?></span>, plus an elevator to transport from floor to floor. Luxuriate in sprawling entertainment spaces that flow outside to the stunning infinity pool, with tennis courts and the ever-tranquil <span class="water"><?php echo $answers['water'];?></span> beyond. Enjoy private access to your own elegantly situated <span class="num1"><?php echo $answers['num1'];?></span> acre mini-estate. Chateau <span class="bestie"><?php echo $answers['bestie'];?></span> is the crème de la crème in prestigious <span class="favAnimal"><?php echo $answers['favAnimal'];?></span> <span class="verb1"><?php echo $answers['verb1'];?></span> Ranch.</p>
 		 		
 		 	</div>
 
@@ -29,4 +29,4 @@ var_dump($currentPlayer);
 		 	</div> -->
 		</div>
 		
-<?php require 'layout/footer.php'; ?>
+<?php require_once 'layout/footer.php'; ?>

@@ -220,7 +220,7 @@ if ($isValid == TRUE) {
 }
 require 'layout/header.php'; ?>
 <pre><?php var_dump($newAnswer);//var_dump($_POST); ?></pre>		<!-- QESTIONS FOR LISTING 2 -->
-		<div id="container" class="q2">
+		<div class="container q2">
 
 			<form id="questions2" name="questions2" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 

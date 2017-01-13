@@ -14,8 +14,9 @@ function get_connection() {
 
 //********* error messages
 $requiredErr = 'This field is required</br>';
-$charErr = 'Unless you are a droid, please use letters only.</br>';
+$charErr = 'Please use letters only.</br>';
 $numberErr = 'Please enter a number.</br>';
+
 
 //************ sanitize any text
 function clean_text($text_data) {
@@ -85,6 +86,7 @@ function save_answers1($answersToSave)  {
     $adj2 = $_POST['adj2'];
     $noun1 = $_POST['noun1'];
     $noun2 = $_POST['noun2'];
+    $favCartoon = $_POST['favCartoon'];
     $prez = $_POST['prez'];
     $gem = $_POST['gem'];
     $basement = $_POST['basement'];
@@ -96,10 +98,10 @@ function save_answers1($answersToSave)  {
     $verb1 = $_POST['verb1'];
 
     // sql query:
-    $sql = "INSERT INTO madlib1 (adj1,favCountry,bestie,adj2,noun1,noun2, favCartoon,prez, gem,basement,tree,artist,water,num1,favAnimal,verb1) VALUES (:adj1,:favCountry,:bestie,:adj2,:noun1,:noun2,:favCartoon,:prez,:gem,:basement,:tree,:artist,:water,:num1,:favAnimal,:verb1)";
+    $sql = "INSERT INTO answers1 (adj1,favCountry,bestie,adj2,noun1,noun2, favCartoon,prez, gem,basement,tree,artist,water,num1,favAnimal,verb1) VALUES (:adj1,:favCountry,:bestie,:adj2,:noun1,:noun2,:favCartoon,:prez,:gem,:basement,:tree,:artist,:water,:num1,:favAnimal,:verb1)";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':adj1', $adj, PDO::PARAM_STR);
+    $stmt->bindParam(':adj1', $adj1, PDO::PARAM_STR);
     $stmt->bindParam(':favCountry', $favCountry, PDO::PARAM_STR);
     $stmt->bindParam(':bestie', $bestie, PDO::PARAM_STR);
     $stmt->bindParam(':adj2', $adj2, PDO::PARAM_STR);
@@ -121,14 +123,18 @@ function save_answers1($answersToSave)  {
     // echo "New records created successfully";
 }
 
+function get_answers1() {
+    $pdo = get_connection();
+    $query = "SELECT * FROM answers1 ORDER BY id DESC LIMIT 1";
+    $answers1 = $pdo->query($query);
+    return $answers1->fetch();
+
+}
+
 function getCurrentPlayer() {
     $pdo = get_connection(); 
     $query = "SELECT * FROM players ORDER BY id DESC LIMIT 1"; 
-    // if($limit) {
-    //     $query = $query . " LIMIT :resultLimit";
-    // }
     $currentPlayer = $pdo->query($query);
-    // $stmt->bindParam(':resultLimit', $limit, PDO::PARAM_INT);
     return $currentPlayer->fetch();  
 }
 ?>

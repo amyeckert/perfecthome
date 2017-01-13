@@ -10,7 +10,7 @@
 	<!-- 	FONTS -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<!-- 	STYLES -->
-	<link rel="stylesheet" type="text/css" href="_css/perfecthome.css"/>
+	<link rel="stylesheet" type="text/css" href="_css/style.css"/>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>

@@ -1,5 +1,8 @@
 
-
+* {
+	outline: 1px solid red;
+	
+}
 // @import url(https:fonts.googleapis.com/css?family=Open+Sans:400,700italic);
 
 body {
@@ -62,7 +65,7 @@ a:hover {
 	box-shadow: none;
 	outline: 1px solid rgba(255,155,68,1);
 }
-#container {
+.container {
 	display: block;
 	margin: 0 auto;
 	padding: 30px 30px;
@@ -173,10 +176,10 @@ input[type="text"].error {
 	display: block;
 }
 
-.listings {
-	display: block;
-	width: 100%
-} 
+// .listings {
+// 	display: block;
+// 	width: 100%
+// } 
 
 #list1, 
 #list2, 
@@ -204,10 +207,13 @@ span.favAnimal,
 span.verb1, 
 span.artist,
 span.prez, 
-span.favCity {
+span.favCity,
+span.error {
 	text-transform: capitalize;
 }
-
+.error {
+	float:left;
+}
 .eliza {
 	font-size: 1rem;
 	color: #878787;
