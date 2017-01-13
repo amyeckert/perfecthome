@@ -36,7 +36,11 @@ if ($isValid == TRUE) {
 		'playerName' => $playerName, 
 	);
 	$players[] = $newPlayer;
+	// array_unshift($players, $newPlayer);
+	//add new player to beginning of array
 	savePlayer($newPlayer);
+	// var_dump($players);
+	
 	// this is where I need a random chooser function call. 
 	header('Location: /questionaire1.php');
 	exit; 
@@ -46,6 +50,7 @@ if ($isValid == TRUE) {
 }
 require 'layout/header.php'; 
 ?>
+<!-- <pre> <?php  ?></pre> -->
 <!--****************************************
 *********  HTML PART OF THE PAGE ***********
 *****************************************-->

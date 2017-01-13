@@ -218,7 +218,7 @@ if ($isValid == TRUE) {
 // 	// die;
 }
 require 'layout/header.php'; ?>
-<pre><?php var_dump($newAnswer);//var_dump($_POST); ?></pre>
+<pre><?php //($newAnswer);//var_dump($_POST); ?></pre>
 
 	<!-- QESTIONS FOR LISTING 1 -->
 	<div id="container" class="q1">

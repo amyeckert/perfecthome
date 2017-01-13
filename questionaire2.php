@@ -1,4 +1,225 @@
-		<!-- QESTIONS FOR LISTING 2 -->
+<?php 
+require __DIR__.'/lib/functions.php';
+$pdo = get_connection();
+
+//set page variables to NULL
+$num = $num2 = $num3 = $num4 = 0;
+$adj3 = $emotion = $direction = $room = $adj4 = $pubInst = $favCity = $landmark = NULL;
+
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {	
+	$isValid = TRUE;
+    foreach ($_POST as $key => $value) {
+        if (empty($value)) {
+            $isValid = FALSE;
+            echo $requiredErr;
+        } else { //this should be a foreach loop eventually. 
+            switch ($key) {
+            case '':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $adj1 = $value;
+                break; 
+            case '':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $favCountry = $value; 
+                break; 
+            case '':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $bestie = $value; 
+                break;
+            case '':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $favCountry = $value; 
+                break;
+            case '':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $adj2 = $value; 
+                break;
+            case '':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $noun1 = $value; 
+                break;
+            case '':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $noun2 = $value; 
+                break;
+            case '':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $favCartoon = $value; 
+                break;
+            case '':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $prez = $value; 
+                break;
+            case '':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $gem = $value; 
+                break;
+            case 'basement':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $basement = $value; 
+                break;
+            case 'tree':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $tree = $value; 
+                break;
+            case 'artist':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $artist = $value; 
+                break;
+            case 'water':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $water = $value; 
+                break;
+            case 'num1':
+                if (test_number($value) == FALSE || ($value <= 0 || $value >= 100)) {
+                    $isValid = FALSE;
+                	echo "Pick a number between 0 - 100. ";
+                } else {
+                	test_number($value); 
+                	$isValid = TRUE;
+                }
+                $num1 = $value; 
+                break;
+            case 'favAnimal':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $favAnimal = $value; 
+                break;
+            case 'verb1':
+                if (test_text($value) == FALSE) {
+                    $isValid = FALSE;
+                    echo $charErr;
+                } else {              
+                    clean_text($value);
+                    $isValid = TRUE;
+                }
+                $verb1 = $value; 
+                break;
+            }
+		}
+	}	
+}
+//********* save answers to db 
+if ($isValid == TRUE) {
+	$answers1 = array();//create an array of the answers to madlib1
+	$newAnswer = array(
+		'adj1' => $adj1,
+		'favCountry' => $favCountry,
+		'bestie' => $bestie,
+		'adj2' => $adj2,
+		'noun1' => $noun1,
+		'noun2' => $noun2,
+		'favCartoon' => $favCartoon,
+		'prez' => $prez,
+		'gem' => $gem,
+		'basement' => $basement,
+		'tree' => $tree,
+		'artist' => $artist,
+		'water' => $water,
+		'num1' => $num1,
+		'favAnimal' => $favAnimal,
+		'verb1' => $verb1,
+	);
+	$answers1[] = $newAnswer;
+	
+	save_answers1($newAnswer);
+	header('Location: /listing.php'); 
+} else {
+	// header('Location: /questionaire1.php');
+// 	// die;
+}
+require 'layout/header.php'; ?>
+<pre><?php var_dump($newAnswer);//var_dump($_POST); ?></pre>		<!-- QESTIONS FOR LISTING 2 -->
 		<div id="container" class="q2">
 
 			<form id="questions2" name="questions2" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">

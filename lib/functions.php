@@ -41,26 +41,21 @@ function test_number($number_data) {
     return TRUE;    
 }
 
-//********* save player name to db 
+//********* save player name to db ?? put this in the first row and move everything else down so I can always search for id==1 to get current player. 
 function savePlayer($playersToSave) {
     $pdo = get_connection();
     $name = $_POST['playerName'];
-
-    //write the sql query:
     $sql = "INSERT INTO players (playername) VALUE (:playername)";
-
-    //prepare the statement:
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':playername', $name, PDO::PARAM_STR);
     $stmt->execute();
-
 
     // ************** DON'T DELETE ****************
     // foreach($playersToSave as $player) {
     //     $name = array();
     //     $cols = array();
     //     foreach($player as $key => $value) {
-    //         $named[':'.$key] = $value;
+    //         $name[':'.$key] = $value;
     //         $cols[] = $key;
     //     }
     //     $sql= "INSERT INTO `players` (`" . implode("`, `", $cols) . "`) ";
@@ -77,7 +72,11 @@ function savePlayer($playersToSave) {
     // file_put_contents('data/players.json', $json);
     // *************************************************
 }  
+// Do I need data in 3 separate tables? Can I combine the ansers to every questionaire into one function? 
+//Then when I make this OO, I can jsut include in the class the specific rows from the answer table to query- per class. LIke- quesionaire 12 consists of this set of questions and stores answers in these particular rows in answers. Then to generate a Listing just pull those rows into the html for output? 
+//OR better to keep 3 dirrefent tables?
 
+//can this be one big foreach loop too? 
 function save_answers1($answersToSave)  {
     $pdo = get_connection();
     $adj1 = $_POST['adj1'];
@@ -119,20 +118,17 @@ function save_answers1($answersToSave)  {
 
     $stmt->execute(); 
     // var_dump($stmt);
-    echo "New records created successfully";
+    // echo "New records created successfully";
 }
 
-function getPlayerName() {
+function getCurrentPlayer() {
     $pdo = get_connection(); 
-    $query = 'SELECT * FROM players'; //get current player name 
-    if($limit) {
-        $query = $query. ' LIMIT :resultLimit';
-    }
-    $stmt = $pdo->prepare($query);
-    $stmt->bindParam('resultLimit', $limit, PDO::PARAM_INT);
-    $stmt->execute();
-    $playerName = $stmt->fetchAll();
-
-    return $playerName;  
+    $query = "SELECT * FROM players ORDER BY id DESC LIMIT 1"; 
+    // if($limit) {
+    //     $query = $query . " LIMIT :resultLimit";
+    // }
+    $currentPlayer = $pdo->query($query);
+    // $stmt->bindParam(':resultLimit', $limit, PDO::PARAM_INT);
+    return $currentPlayer->fetch();  
 }
 ?>
