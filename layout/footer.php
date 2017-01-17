@@ -26,7 +26,7 @@ require on any new page that needs this footer.
 <!-- 	FORM VALIDATION -->
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.4.3/parsley.js"></script> -->
 <!--	CUSTOM JS -->
-	<!-- <script src="_js/perfecthome.js"></script> -->
+<!-- <script src="_js/perfecthome.js"></script> -->
 
 </body>
 </html>
