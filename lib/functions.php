@@ -13,9 +13,10 @@ function get_connection() {
 //*********** FORM VALIDATION ******************
 
 //********* error messages
-$requiredErr = 'This field is required</br>';
+$requiredErr = 'This field is required.</br>';
 $charErr = 'Please use letters only.</br>';
 $numberErr = 'Please enter a number.</br>';
+$errorMessage = "";
 
 
 //************ sanitize any text
