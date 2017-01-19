@@ -13,10 +13,14 @@ function get_connection() {
 //*********** FORM VALIDATION ******************
 
 //********* error messages
-$requiredErr = 'This field is required.</br>';
-$charErr = 'Please use letters only.</br>';
-$numberErr = 'Please enter a number.</br>';
-$errorMessage = "";
+$requiredErr = 'This field is required.';
+$charErr = 'Please use letters only.';
+$numberErr = 'Please enter a number.';
+// $errorMessage = "";
+$nameIsValid = FALSE;
+$q1IsValid = FALSE;
+$q2IsValid = FALSE;
+$q3IsValid = FALSE;
 
 
 //************ sanitize any text
@@ -79,6 +83,7 @@ function savePlayer($playersToSave) {
 //OR better to keep 3 dirrefent tables?
 
 //can this be one big foreach loop too? 
+//q1
 function save_answers1($answersToSave)  {
     $pdo = get_connection();
     $adj1 = $_POST['adj1'];
@@ -123,14 +128,57 @@ function save_answers1($answersToSave)  {
     // var_dump($stmt);
     // echo "New records created successfully";
 }
-
 function get_answers1() {
     $pdo = get_connection();
     $query = "SELECT * FROM answers1 ORDER BY id DESC LIMIT 1";
     $answers1 = $pdo->query($query);
     return $answers1->fetch();
-
 }
+
+//q2
+function save_answers2($answersToSave)  {
+    $pdo = get_connection();
+
+    $num5 = $_POST['num5'];
+    $adj3 = $_POST['adj3'];
+    $num2 = $_POST['num2'];
+    $num3 = $_POST['num3'];
+    $num4 = $_POST['num4'];
+    $emotion = $_POST['emotion'];
+    $direction = $_POST['direction'];
+    $room = $_POST['room'];
+    $adj4 = $_POST['adj4'];
+    $pubInst = $_POST['pubInst'];
+    $favCity = $_POST['favCity'];
+    $landmark = $_POST['landmark'];
+
+    // sql query:
+    $sql = "INSERT INTO answers2 (num5,adj3,num2,num3,num4,emotion,direction,room,adj4,pubInst,favCity,landmark) VALUES (:num5,:adj3,:num2,:num3,:num4,:emotion,:direction,:room,:adj4,:pubInst,:favCity,:landmark)";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':num5', $num5, PDO::PARAM_STR);
+    $stmt->bindParam(':adj3', $adj3, PDO::PARAM_STR);
+    $stmt->bindParam(':num2', $num2, PDO::PARAM_STR);
+    $stmt->bindParam(':num3', $num3, PDO::PARAM_STR);
+    $stmt->bindParam(':num4', $num4, PDO::PARAM_STR);
+    $stmt->bindParam(':emotion', $emotion, PDO::PARAM_STR);
+    $stmt->bindParam(':direction', $direction, PDO::PARAM_STR);
+    $stmt->bindParam(':room', $room, PDO::PARAM_STR);
+    $stmt->bindParam(':adj4', $adj4, PDO::PARAM_STR);
+    $stmt->bindParam(':pubInst', $pubInst, PDO::PARAM_STR);
+    $stmt->bindParam(':favCity', $favCity, PDO::PARAM_STR);
+    $stmt->bindParam(':landmark', $landmark, PDO::PARAM_STR);
+
+    $stmt->execute(); 
+}
+function get_answers2() {
+    $pdo = get_connection();
+    $query = "SELECT * FROM answers2 ORDER BY id DESC LIMIT 1";
+    $answers2 = $pdo->query($query);
+    return $answers2->fetch();
+}
+
+//q3
 
 function getCurrentPlayer() {
     $pdo = get_connection(); 

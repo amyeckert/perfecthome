@@ -7,23 +7,23 @@ $pdo = get_connection();
 $greeting = "Find Your Perfect Home!";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {	
-	$isValid = TRUE;
+	$nameIsValid = TRUE;
     if (empty($_POST["playerName"])) {
-        $isValid = FALSE;
+        $nameIsValid = FALSE;
         $errorMessage = "Go ahead, make one up!";
     } else {
         if (test_text($_POST["playerName"]) == FALSE) {
-            $isValid = FALSE;
+            $nameIsValid = FALSE;
             $errorMessage = $charErr; 
         } else {     
             clean_text($_POST["playerName"]);
-            $isValid = TRUE;
+            $nameIsValid = TRUE;
         }
     }
 }	
 
 // validate 
-if ($isValid == TRUE) {
+if ($nameIsValid == TRUE) {
 	$players = array();//create an array of players
 	$newPlayer = array(
 		'playerName' => $playerName, 

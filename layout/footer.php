@@ -11,7 +11,7 @@ require on any new page that needs this footer.
 
 	<div class="share">
 		<div class="fb-share-button" data-href="http://www.perfecthomequiz.com" data-layout="button" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.perfecthomequiz.com%2F&amp;s
-		c=sdkpreparse"><img src="_img/fb_icon.svg"></a></div>
+		c=sdkpreparse"><img src="img/fb_icon.svg"></a></div>
 	</div>
 
 

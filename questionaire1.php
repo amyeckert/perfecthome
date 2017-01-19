@@ -8,270 +8,270 @@ $num1 = 0;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {	
     foreach ($_POST as $key => $value) {
-	// $isValid = TRUE;
+	// $q1IsValid = TRUE;
 
         switch ($key) {
             case 'adj1':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $adj1ErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $adj1ErrorMessage = $charErr;
                     } else {              
                         clean_text($value);
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                         $adj1 = $value;
                     }
                 }  
                 break;
             case 'favCountry':
                 if (empty($value)) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $adj1ErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $favCountryErrorMessage = $charErr;
                     } else {              
                         clean_text($value);
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                         $favCountry = $value; 
                     }
                 }
                 break;
             case 'bestie':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $bestieErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $bestieErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $bestie = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'adj2':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $adj2ErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $adj2ErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $adj2 = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 } 
                 break;
             case 'noun1':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $noun1ErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $noun1ErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $noun1 = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'noun2':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $noun2ErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $noun2ErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $noun2 = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'favCartoon':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $favCartoonErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $favCartoonErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $favCartoon = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'prez':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $prezErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $prezErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $prez = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'gem':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $gemErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
-                        $gemCartoonErrorMessage = $charErr;
+                        $q1IsValid = FALSE;
+                        $gemErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $gem = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'basement':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $basementErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
-                        $basementCartoonErrorMessage = $charErr;
+                        $q1IsValid = FALSE;
+                        $basementErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $basement = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'tree':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $treeErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
-                        $treeCartoonErrorMessage = $charErr;
+                        $q1IsValid = FALSE;
+                        $treeErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $tree = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'artist':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $artistErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
-                        $artistCartoonErrorMessage = $charErr;
+                        $q1IsValid = FALSE;
+                        $artistErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $artist = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'water':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $waterErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $waterCartoonErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $water = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 } 
                 break;
             case 'num1':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $num1ErrorMessage = $requiredErr;
                 } else {
                     if (test_number($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $num1ErrorMessage = $numberErr;
                     } else { 
                         clean_text($value);
                         $num1 = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'favAnimal':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $favAnimalErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $favAnimalCartoonErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $favAnimal = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 } 
                 break;
             case 'num1':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $num1Message = $requiredErr;
                 } else {
                     if (test_number($value) == FALSE)  {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $num1ErrorMessage = $numberErr;
                     } else { 
                         clean_text($value);
                         $num1 = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;
             case 'verb1':
                 if (empty($value)) {
-                    $isValid = FALSE;
+                    $q1IsValid = FALSE;
                     $verb1ErrorMessage = $requiredErr;
                 } else {
                     if (test_text($value) == FALSE) {
-                        $isValid = FALSE;
+                        $q1IsValid = FALSE;
                         $verb1ErrorMessage = $charErr;
                     } else { 
                         clean_text($value);
                         $verb1 = $value; 
-                        // $isValid = TRUE;
+                        // $q1IsValid = TRUE;
                     }
                 }
                 break;          
             }
         } 
-        $isValid = TRUE;
+        $q1IsValid = TRUE;
 } 
 //********* save answers to db 
-if ($isValid == TRUE) {
+if ($q1IsValid == TRUE) {
     $answers1 = array();//create an array of the answers to madlib1
     $newAnswer = array(
         'adj1' => $adj1,
@@ -294,7 +294,11 @@ if ($isValid == TRUE) {
     $answers1[] = $newAnswer;
     
     save_answers1($newAnswer);
-    header('Location: /listing.php'); 
+    header('Location: /listing1.php');
+    exit; 
+// } else {
+//     // header('Location: /questionaire1.php');
+//  die;
 }
 
 require 'layout/header.php'; ?>
@@ -313,7 +317,7 @@ require 'layout/header.php'; ?>
             <span class="error"><?php echo $favCountryErrorMessage;?></span>
 
             <label for="bestie">What is the first name of your best friend?</label>
-            <input id="bestie" class="form-control bestie" name="bestie" type="text" placeholder="My bestie is..." value="<?php echo $bestie;?>"aria-required="true" >
+            <input id="bestie" class="form-control bestie" name="bestie" type="text" placeholder="My bestie is..." value="<?php echo $bestie;?>" aria-required="true" >
             <span class="error"><?php echo $bestieErrorMessage;?></span>
 
             <label for="adj2">Enter another adjective.</label>
@@ -372,84 +376,84 @@ require 'layout/header.php'; ?>
         </form> 
     </div>  
         <!-- // if (empty($_POST["adj1"])) {
-        //     $isValid = FALSE;
+        //     $q1IsValid = FALSE;
         //     $adj1ErrorMessage = $requiredErr;
         // } else {
         //     if (test_text($_POST["adj1"]) == FALSE) {
-        //         $isValid = FALSE; 
+        //         $q1IsValid = FALSE; 
         //         $adj1ErrorMessage = $charErr;
         //     } else {              
         //         clean_text($_POST["adj1"]);
-        //         $isValid = TRUE;
+        //         $q1IsValid = TRUE;
         //         $adj1 = $_POST["adj1"]; 
         //     }
         // }
 
         // if (empty($_POST["favCountry"])) {
-        //     $isValid = FALSE;
+        //     $q1IsValid = FALSE;
         //     $favCountryErrorMessage = $requiredErr;;
         // } else {
         //     if (test_text($_POST["favCountry"]) == FALSE) {
-        //         $isValid = FALSE; 
+        //         $q1IsValid = FALSE; 
         //         $favCountryErrorMessage = $charErr;
         //     } else {              
         //             clean_text($_POST["favCountry"]);
-        //             $isValid = TRUE;
+        //             $q1IsValid = TRUE;
         //             $favCountry = $_POST["favCountry"];
         //     }
         // }
 
         // if (empty($_POST["bestie"])) {
-        //     $isValid = FALSE;
+        //     $q1IsValid = FALSE;
         //     $bestieErrorMessage = $requiredErr;;
         // } else {
         //     if (test_text($_POST["bestie"]) == FALSE) {
-        //         $isValid = FALSE; 
+        //         $q1IsValid = FALSE; 
         //         $bestieErrorMessage = $charErr;
         //     } else {              
         //             clean_text($_POST["bestie"]);
-        //             $isValid = TRUE;
+        //             $q1IsValid = TRUE;
         //             $bestie = $_POST["bestie"];
         //     }
         // }
 
         // if (empty($_POST["adj2"])) {
-        //     $isValid = FALSE;
+        //     $q1IsValid = FALSE;
         //     $adj2ErrorMessage = $requiredErr;;
         // } else {
         //     if (test_text($_POST["adj2"]) == FALSE) {
-        //         $isValid = FALSE; 
+        //         $q1IsValid = FALSE; 
         //         $adj2ErrorMessage = $charErr;
         //     } else {              
         //             clean_text($_POST["adj2"]);
-        //             $isValid = TRUE;
+        //             $q1IsValid = TRUE;
         //             $adj2 = $_POST["adj2"];
         //     }
         // }
 
         // if (empty($_POST["noun1"])) {
-        //     $isValid = FALSE;
+        //     $q1IsValid = FALSE;
         //     $noun1ErrorMessage = $requiredErr;;
         // } else {
         //     if (test_text($_POST["noun1"]) == FALSE) {
-        //         $isValid = FALSE; 
+        //         $q1IsValid = FALSE; 
         //         $noun1ErrorMessage = $charErr;
         //     } else {              
         //             clean_text($_POST["noun1"]);
-        //             $isValid = TRUE;
+        //             $q1IsValid = TRUE;
         //             $noun1 = $_POST["noun1"];
         //     }
         // }
         // if (empty($_POST["noun2"])) {
-        //     $isValid = FALSE;
+        //     $q1IsValid = FALSE;
         //     $noun2ErrorMessage = $requiredErr;;
         // } else {
         //     if (test_text($_POST["noun2"]) == FALSE) {
-        //         $isValid = FALSE; 
+        //         $q1IsValid = FALSE; 
         //         $noun2ErrorMessage = $charErr;
         //     } else {              
         //             clean_text($_POST["noun2"]);
-        //             $isValid = TRUE;
+        //             $q1IsValid = TRUE;
         //             $noun2 = $_POST["noun2"];
         //     }
         // } -->
