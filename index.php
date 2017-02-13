@@ -3,7 +3,6 @@ require __DIR__.'/lib/functions.php';
 $pdo = get_connection();
 
 //set page variables to NULL
-// $playerName = NULL;
 $greeting = "Find Your Perfect Home!";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {	
@@ -22,9 +21,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }	
 
-// validate 
+// validate form
 if ($nameIsValid == TRUE) {
-	$players = array();//create an array of players
+	$players = array(); //create an array of players
 	$newPlayer = array(
 		'playerName' => $playerName, 
 	);
@@ -32,14 +31,13 @@ if ($nameIsValid == TRUE) {
 
 	savePlayer($newPlayer);
 	
-	// this is where I need a random chooser function call. 
+	// this is where I need a random chooser function call?
 	header('Location: /questionaire1.php');
 	exit; 
 }
 
 require 'layout/header.php'; 
 ?>
-<!-- <pre> <?php  ?></pre> -->
 <!--****************************************
 *********  HTML PART OF THE PAGE ***********
 *****************************************-->

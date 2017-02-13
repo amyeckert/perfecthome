@@ -99,30 +99,3 @@ $pdo->exec('CREATE TABLE `madlib3` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
 echo 'Ding!';
-
-
-
-
-
-
-/*
- * INSERT SOME DATA!
- */
-// $pdo->exec('INSERT INTO ship
-//     (name, weapon_power, jedi_factor, strength, is_under_repair) VALUES
-//     ("Jedi Starfighter", 5, 15, 30, 0)'
-// );
-// $pdo->exec('INSERT INTO ship
-//     (name, weapon_power, jedi_factor, strength, is_under_repair) VALUES
-//     ("CloakShape Fighter", 2, 2, 70, 0)'
-// );
-// $pdo->exec('INSERT INTO ship
-//     (name, weapon_power, jedi_factor, strength, is_under_repair) VALUES
-//     ("Super Star Destroyer", 70, 0, 500, 0)'
-// );
-// $pdo->exec('INSERT INTO ship
-//     (name, weapon_power, jedi_factor, strength, is_under_repair) VALUES
-//     ("RZ-1 A-wing interceptor", 4, 4, 50, 0)'
-// );
-
-// echo 'Ding!';

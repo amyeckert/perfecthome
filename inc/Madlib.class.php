@@ -1,7 +1,8 @@
+<!-- THIS PART IS IN A WORK IN PROGRESS !-->
+
 <?php
 session_start();
 ?>
-
 
 <?php
 class Madlib {
@@ -16,9 +17,9 @@ class Madlib {
 
  	}	
   // add a question to the questionaire 
-  //                                                            (last 3 are optional when defaults set in param)
+  // last 3 are optional when defaults set in param
  	public function addQuestion($qid, $label, $placeholder, $weight, $options = null, $value='', $validation = '', $process = '') {
- 		// adds above parameters as an array inside $qustionaire array, [] is shorcut to so this.
+ 		// adds above parameters as an array inside $qustionaire array, [] is shorcut to do this.
  		$this->questionaire[$weight] = array(
  			'qid' => $qid, //key
  			'weight' => $weight, //order within the form, is an array.
@@ -50,7 +51,5 @@ class Madlib {
     return $this->listing;
     //each listing has a different background image! Refer to the js. 
   }
-
-
 }
 ?>

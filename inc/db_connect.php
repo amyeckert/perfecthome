@@ -5,6 +5,4 @@ $sql = mysql_connect($settings['host'], $settings['username'], $settings['passwo
 if (!$sql) {
     die('Could not connect: ' . mysql_error());
 }
-
-mysql_select_db($settings['database'], $sql) or die('Could not select database.');
-                // use these settings, to choose database. 
+mysql_select_db($settings['database'], $sql) or die('Could not select database.');              
