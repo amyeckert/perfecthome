@@ -1,4 +1,4 @@
-<?php 
+<?php
 require __DIR__.'/lib/functions.php';
 $pdo = get_connection();
 
@@ -6,7 +6,7 @@ $pdo = get_connection();
 $adj1 = $favCountry = $bestie = $adj2 = $noun1 = $noun2 = $favCartoon = $prez = $gem = $basement = $tree = $artist = $water = $favAnimal = $verb1 = NULL;
 $num1 = 0;
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {	
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     foreach ($_POST as $key => $value) {
 	// $q1IsValid = TRUE;
 
@@ -19,12 +19,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $adj1ErrorMessage = $charErr;
-                    } else {              
+                    } else {
                         clean_text($value);
                         // $q1IsValid = TRUE;
                         $adj1 = $value;
                     }
-                }  
+                }
                 break;
             case 'favCountry':
                 if (empty($value)) {
@@ -34,10 +34,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $favCountryErrorMessage = $charErr;
-                    } else {              
+                    } else {
                         clean_text($value);
                         // $q1IsValid = TRUE;
-                        $favCountry = $value; 
+                        $favCountry = $value;
                     }
                 }
                 break;
@@ -49,9 +49,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $bestieErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $bestie = $value; 
+                        $bestie = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
@@ -64,27 +64,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $adj2ErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $adj2 = $value; 
-                        // $q1IsValid = TRUE;
-                    }
-                } 
-                break;
-            case 'noun1':
-                if (empty($value)) {
-                    $q1IsValid = FALSE;
-                    $noun1ErrorMessage = $requiredErr;
-                } else {
-                    if (test_text($value) == FALSE) {
-                        $q1IsValid = FALSE;
-                        $noun1ErrorMessage = $charErr;
-                    } else { 
-                        clean_text($value);
-                        $noun1 = $value; 
+                        $adj2 = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
+
+
                 break;
             case 'noun2':
                 if (empty($value)) {
@@ -94,9 +81,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $noun2ErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $noun2 = $value; 
+                        $noun2 = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
@@ -109,9 +96,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $favCartoonErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $favCartoon = $value; 
+                        $favCartoon = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
@@ -124,9 +111,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $prezErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $prez = $value; 
+                        $prez = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
@@ -139,9 +126,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $gemErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $gem = $value; 
+                        $gem = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
@@ -154,9 +141,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $basementErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $basement = $value; 
+                        $basement = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
@@ -169,9 +156,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $treeErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $tree = $value; 
+                        $tree = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
@@ -184,9 +171,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $artistErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $artist = $value; 
+                        $artist = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
@@ -199,12 +186,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $waterCartoonErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $water = $value; 
+                        $water = $value;
                         // $q1IsValid = TRUE;
                     }
-                } 
+                }
                 break;
             case 'num1':
                 if (empty($value)) {
@@ -214,9 +201,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_number($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $num1ErrorMessage = $numberErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $num1 = $value; 
+                        $num1 = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
@@ -229,12 +216,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $favAnimalCartoonErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $favAnimal = $value; 
+                        $favAnimal = $value;
                         // $q1IsValid = TRUE;
                     }
-                } 
+                }
                 break;
             case 'num1':
                 if (empty($value)) {
@@ -244,9 +231,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_number($value) == FALSE)  {
                         $q1IsValid = FALSE;
                         $num1ErrorMessage = $numberErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $num1 = $value; 
+                        $num1 = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
@@ -259,18 +246,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (test_text($value) == FALSE) {
                         $q1IsValid = FALSE;
                         $verb1ErrorMessage = $charErr;
-                    } else { 
+                    } else {
                         clean_text($value);
-                        $verb1 = $value; 
+                        $verb1 = $value;
                         // $q1IsValid = TRUE;
                     }
                 }
-                break;          
+                break;
             }
-        } 
+        }
         $q1IsValid = TRUE;
-} 
-//********* save answers to db 
+}
+//********* save answers to db
 if ($q1IsValid == TRUE) {
     $answers1 = array();//create an array of the answers to madlib1
     $newAnswer = array(
@@ -292,10 +279,10 @@ if ($q1IsValid == TRUE) {
         'verb1' => $verb1,
     );
     $answers1[] = $newAnswer;
-    
+
     save_answers1($newAnswer);
     header('Location: /listing1.php');
-    exit; 
+    exit;
 // } else {
 //     // header('Location: /questionaire1.php');
 //  die;
@@ -307,7 +294,7 @@ require 'layout/header.php'; ?>
     <div class="container q1">
 
         <form id="questions1" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                
+
             <label for="adj1">Enter an adjective.</label>
             <input id="adj1" class="form-control adj1" name="adj1" type="text" placeholder="Adjective..." value="<?php echo $adj1;?>" aria-required="true">
             <span class="error"><?php echo $adj1ErrorMessage;?></span>
@@ -373,19 +360,19 @@ require 'layout/header.php'; ?>
             <span class="error"><?php echo $verb1ErrorMessage;?></span>
 
             <input id="btn-submit1" type="submit" value="Call the movers!">
-        </form> 
-    </div>  
+        </form>
+    </div>
         <!-- // if (empty($_POST["adj1"])) {
         //     $q1IsValid = FALSE;
         //     $adj1ErrorMessage = $requiredErr;
         // } else {
         //     if (test_text($_POST["adj1"]) == FALSE) {
-        //         $q1IsValid = FALSE; 
+        //         $q1IsValid = FALSE;
         //         $adj1ErrorMessage = $charErr;
-        //     } else {              
+        //     } else {
         //         clean_text($_POST["adj1"]);
         //         $q1IsValid = TRUE;
-        //         $adj1 = $_POST["adj1"]; 
+        //         $adj1 = $_POST["adj1"];
         //     }
         // }
 
@@ -394,9 +381,9 @@ require 'layout/header.php'; ?>
         //     $favCountryErrorMessage = $requiredErr;;
         // } else {
         //     if (test_text($_POST["favCountry"]) == FALSE) {
-        //         $q1IsValid = FALSE; 
+        //         $q1IsValid = FALSE;
         //         $favCountryErrorMessage = $charErr;
-        //     } else {              
+        //     } else {
         //             clean_text($_POST["favCountry"]);
         //             $q1IsValid = TRUE;
         //             $favCountry = $_POST["favCountry"];
@@ -408,9 +395,9 @@ require 'layout/header.php'; ?>
         //     $bestieErrorMessage = $requiredErr;;
         // } else {
         //     if (test_text($_POST["bestie"]) == FALSE) {
-        //         $q1IsValid = FALSE; 
+        //         $q1IsValid = FALSE;
         //         $bestieErrorMessage = $charErr;
-        //     } else {              
+        //     } else {
         //             clean_text($_POST["bestie"]);
         //             $q1IsValid = TRUE;
         //             $bestie = $_POST["bestie"];
@@ -422,9 +409,9 @@ require 'layout/header.php'; ?>
         //     $adj2ErrorMessage = $requiredErr;;
         // } else {
         //     if (test_text($_POST["adj2"]) == FALSE) {
-        //         $q1IsValid = FALSE; 
+        //         $q1IsValid = FALSE;
         //         $adj2ErrorMessage = $charErr;
-        //     } else {              
+        //     } else {
         //             clean_text($_POST["adj2"]);
         //             $q1IsValid = TRUE;
         //             $adj2 = $_POST["adj2"];
@@ -436,9 +423,9 @@ require 'layout/header.php'; ?>
         //     $noun1ErrorMessage = $requiredErr;;
         // } else {
         //     if (test_text($_POST["noun1"]) == FALSE) {
-        //         $q1IsValid = FALSE; 
+        //         $q1IsValid = FALSE;
         //         $noun1ErrorMessage = $charErr;
-        //     } else {              
+        //     } else {
         //             clean_text($_POST["noun1"]);
         //             $q1IsValid = TRUE;
         //             $noun1 = $_POST["noun1"];
@@ -449,9 +436,9 @@ require 'layout/header.php'; ?>
         //     $noun2ErrorMessage = $requiredErr;;
         // } else {
         //     if (test_text($_POST["noun2"]) == FALSE) {
-        //         $q1IsValid = FALSE; 
+        //         $q1IsValid = FALSE;
         //         $noun2ErrorMessage = $charErr;
-        //     } else {              
+        //     } else {
         //             clean_text($_POST["noun2"]);
         //             $q1IsValid = TRUE;
         //             $noun2 = $_POST["noun2"];

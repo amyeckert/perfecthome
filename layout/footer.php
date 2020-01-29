@@ -1,11 +1,11 @@
 <!--
 ***************************************************************
-This is where the html for the site footer lives. 
-require on any new page that needs this footer. 
+This is where the html for the site footer lives.
+require on any new page that needs this footer.
 ***************************************************************
 -->
 
-<footer class="container">
+<footer class="">
 
 	<button id="btn-reset" class="btn" type="submit"><a href="/index.php">Not exactly what you had in mind?</a></button>
 
@@ -16,12 +16,12 @@ require on any new page that needs this footer.
 
 
 	<div class="eliza"><a href="http://eliza.liveinsouthjersey.com" target="_blank">Looking for <em>actual</em> real estate listings?</a></div>
-  
+
 </footer>
 
 <!--	JQUERY, etc. -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="_js/bootstrap.min.js"></script> 
+<script src="_js/bootstrap.min.js"></script>
  -->
 <!-- 	FORM VALIDATION -->
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.4.3/parsley.js"></script> -->

@@ -1,6 +1,6 @@
 
 // * { outline: 1px solid red;}
-// @import url(https:fonts.googleapis.com/css?family=Open+Sans:400,700italic);
+@import url(https:fonts.googleapis.com/css?family=Open+Sans:400,700italic);
 
 body {
 	height: 100%;
@@ -22,9 +22,9 @@ p {
 }
 
 /*	FORM FIELD STYLES */
-fieldset, 
-form, 
-label, 
+fieldset,
+form,
+label,
 legend {
 	width: 100%;
 	margin: 0;
@@ -70,7 +70,7 @@ a {color: #fff;
 	max-width: 850px;
 	min-width: 280px;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 1rem; 
+	font-size: 1rem;
 	border: none;
 	background-color: #fff;
 	color: rgba(63,63,61,1);
@@ -121,7 +121,7 @@ input[type="text"]:focus {
  	box-shadow: none;
 }
 button,
-button[type="submit"], 
+button[type="submit"],
 input[type="submit"] {
 	max-width: 50%;
 	padding: 1rem;
@@ -135,8 +135,8 @@ input[type="submit"] {
 
 }
 button:hover,
-button[type="submit"]:hover, 
-input[type="submit"]:hover {	
+button[type="submit"]:hover,
+input[type="submit"]:hover {
 	border-radius: 0;
 	box-shadow: none;
 	outline: 1px solid rgba(255,155,68,1);
@@ -175,17 +175,17 @@ input[type="text"].error {
 // .listings {
 // 	display: block;
 // 	width: 100%
-// } 
+// }
 
-#list1, 
-#list2, 
-#list3 { 
+#list1,
+#list2,
+#list3 {
 	display: block;
 	width: 90%;
 	/*height: 60vh; */
 }
-#list1 p, 
-#list2 p, 
+#list1 p,
+#list2 p,
 #list3 p {
 	font-size: 1.5rem;
 }
@@ -199,10 +199,10 @@ span.water,
 span.bestie,
 span.favCartoon,
 span.favCountry,
-span.favAnimal, 
-span.verb1, 
+span.favAnimal,
+span.verb1,
 span.artist,
-span.prez, 
+span.prez,
 span.favCity,
 span.error {
 	text-transform: capitalize;
@@ -226,7 +226,7 @@ span.error {
 	margin: 1rem auto;
 	display: block;
 	height: 65px;
-	
+
 }
 .fb-share-button {
 	display: block;
